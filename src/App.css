@@ -125,8 +125,8 @@
 .Header .hd_wrap h1 a {
   display: inline-block;
   font-size: 0;
-  width: 146px;
-  height: 72px;
+  width: 147px;
+  height: 71px;
   background: url(../public/assets/images/logo.png);
   vertical-align: middle;
 }
@@ -184,7 +184,8 @@
 }
 
 .Header .top_service strong:hover {
-  color: #f5a100;
+  color: const num=0;
+  ;
 }
 
 .Header .top_service strong.on {
@@ -855,6 +856,56 @@
 }
 
 .News span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+
+
+
+
+.Prom .inner {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 820px;
+
+}
+
+.Prom .inner figure {
+  width: 253.3px;
+}
+
+.Prom .inner figure img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.Prom .box {
+  margin: 0 0 30px 0;
+}
+
+.Prom strong {
+  display: block;
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  color: var(--mc);
+}
+
+.Prom figure .title {
+  font-size: 20px;
+  font-weight: 500;
+  word-break: keep-all;
+  line-height: 1.45;
+  min-height: 80px;
+}
+
+.Prom figure:hover .title {
+  text-decoration: underline;
+}
+
+.Prom span {
   font-size: 14px;
   font-weight: 300;
 }

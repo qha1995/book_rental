@@ -111,12 +111,12 @@ const MainVisual = () => {
 
                 </div>
             </ul>
-            <div className='Main_obj01'>
+            {/* <div className='Main_obj01'>
                 <figure><img src={process.env.PUBLIC_URL + "/assets/images/main_obj1.png"} alt="" /></figure></div>
             <div className='Main_obj02'>
                 <figure><img src={process.env.PUBLIC_URL + "/assets/images/main_obj3.png"} alt="" /></figure></div>
             <div className='Main_obj03'>
-                <figure><img src={process.env.PUBLIC_URL + "/assets/images/main_obj4.png"} alt="" /></figure></div>
+                <figure><img src={process.env.PUBLIC_URL + "/assets/images/main_obj4.png"} alt="" /></figure></div> */}
         </section>
     )
 }

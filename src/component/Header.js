@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import TopBanner from './TopBanner';
 
 const NAVLINK = [
-    { id: 1, menu: "이용정보", link: '/' },
-    { id: 2, menu: "요금&프로모션", link: '/' },
-    { id: 3, menu: "즐길거리", link: '/' },
-    { id: 4, menu: "멤버십", link: '/' },
+    { id: 1, menu: "이용정보", link: '/sub01' },
+    { id: 2, menu: "요금&프로모션", link: '/sub02' },
+    { id: 3, menu: "즐길거리", link: '/sub03' },
+    { id: 4, menu: "멤버십", link: '/sub04' },
 
 ]
 
@@ -27,7 +28,7 @@ const Header = () => {
             <div className="hd_wrap">
                 <h1>
                     <a href="/" >
-                        현대엘리베이트
+                        에버랜드
                     </a>
                 </h1>
                 <nav className="Gnb inner">
@@ -36,7 +37,7 @@ const Header = () => {
                             NAVLINK.map((it, idx) => {
                                 return (
                                     <li key={it.id}>
-                                        <a href={it.link}>{it.menu}</a>
+                                        <Link to={it.link}>{it.menu}</Link>
                                     </li>
                                 )
                             })

@@ -16,7 +16,7 @@ const MainContent = () => {
                         return (
                             <figure key={content.id}>
                                 <div className="box">
-                                    <img src={process.env.PUBLIC_URL + "/assets/images/section1_" + content.id + ".png"} alt="" />
+                                    <img src={process.env.PUBLIC_URL + "/assets/images/section1_" + content.id + ".PNG"} alt="" />
                                 </div>
                                 <div className="tit">{content.title}</div>
                                 <div className="dec">{content.dec}</div>

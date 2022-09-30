@@ -8,11 +8,15 @@
     "@testing-library/user-event": "^13.5.0",
     "gsap": "^3.11.1",
     "react": "^18.2.0",
+    "react-colgroup": "^1.0.2",
     "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
+    "react-table": "^7.8.0",
     "react-youtube": "^10.0.0",
+    "sass": "^1.55.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
@@ -21,8 +25,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
+  "homepage": "https://qha1995.github.io/portfolio_everland/",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -40,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
