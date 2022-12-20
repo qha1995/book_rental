@@ -1,0 +1,467 @@
+@use "common";
+
+.Subpage {
+  .sub {
+    display: flex;
+
+    aside {
+      width: 330px;
+      border-left: 1px solid var(--gc);
+      min-height: 800px;
+      padding: 50px 0 0 50px;
+    }
+
+    article {
+      flex: 1;
+      padding: 50px 50px 100px 0;
+    }
+  }
+
+  .nav__bar {
+    border-top: 1px solid var(--gc);
+    border-bottom: 1px solid var(--gc);
+    background: #f4f4f4;
+    text-align: right;
+    line-height: 40px;
+  }
+}
+
+.aside__lnb {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 0px 0;
+
+  li {
+    line-height: 45px;
+
+    a {
+      display: block;
+      border-bottom: 1px solid #ddd;
+
+      &::before {
+        content: "\e93e";
+        font-family: xeicon;
+        font-size: 8px;
+        vertical-align: middle;
+        margin: 0 15px 0 0;
+      }
+
+      &.active {
+        padding: 0 0 0 15px;
+        color: #fff;
+        background: #f5a100;
+        border-radius: 10px;
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+}
+
+.aside__customer {
+  text-align: right;
+
+  img {
+    transform: translate(15%, 0%);
+  }
+
+  p {
+    text-align: end;
+  }
+
+  strong {
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  hr {
+    margin: 10px 0;
+    border-top: 1px solid #f5a100;
+  }
+}
+
+.Article {
+  .tb_org02 {
+    width: 100%;
+    border-top: 2px solid #ff6300;
+    border-bottom: 1px solid #ff6300;
+    margin: 0 0 50px 0;
+
+    thead {
+      tr th {
+        padding: 10px 0;
+        text-align: center;
+        background: #fff2e9;
+        border-bottom: 1px solid #bfbfbf;
+        border-right: 1px solid #bfbfbf;
+      }
+
+      .bdOrg {
+        border-bottom: 1px solid #ff6300;
+      }
+    }
+
+    tbody {
+      tr td {
+        padding: 10px 0;
+        text-align: center;
+        border-right: 1px solid #bfbfbf;
+        border-bottom: 1px solid #bfbfbf;
+        color: #444444;
+      }
+
+      .bdOrg {
+        border-bottom: 1px solid #ff6300;
+      }
+
+      .td_listL {
+        letter-spacing: -1px;
+        padding: 0 0 3px 8px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .mt10 {
+    margin-top: 10px !important;
+  }
+
+  .tit {
+    line-height: 45px;
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 50px 0;
+
+    strong {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  .bg {
+    position: relative;
+    height: 300px;
+    background: url(../../public/assets/images/subpage_01.jpg) no-repeat right
+      top/cover;
+    border-left: 3px solid #f5a100;
+    padding: 100px 0 0 100px;
+    margin: 0 0 100px 0;
+
+    h2 {
+      line-height: 70px;
+      font-size: 50px;
+      font-weight: 800;
+      text-shadow: 1px 0 3px rgb(255 255 255 / 25%);
+      background: linear-gradient(to right top, #0a96ba, #f5a100, #333333);
+      color: transparent;
+      -webkit-background-clip: text;
+    }
+
+    p {
+      color: #ddd;
+      font-size: 17px;
+      text-indent: 5px;
+      font-weight: 300;
+    }
+  }
+
+  .sub__tit {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    padding: 0px 10px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -9px;
+      left: 0;
+      width: 3px;
+      height: 17px;
+      background: #f5a100;
+      margin: 10px 0 0 0;
+    }
+  }
+
+  .sub__des {
+    margin: 0 0 30px 0;
+  }
+
+  .sub__img {
+    display: flex;
+    gap: 15px;
+    margin: 0 0 50px 0;
+  }
+
+  .sub__service {
+    margin: 0 0 50px 0;
+
+    > li {
+      position: relative;
+      padding: 0 0 2px 20px;
+      line-height: 35px;
+      border-bottom: 1px solid #ddd;
+      font-weight: 500;
+      font-size: 17px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 13px;
+        left: 0;
+        width: 3px;
+        height: 3px;
+        background: #f5a100;
+      }
+    }
+
+    .txt {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 23px;
+    }
+  }
+}
+
+// 반응형 페이지
+
+@media (max-width: 768px) {
+  .Subpage {
+    .sub {
+      display: flex;
+
+      aside {
+        width: 330px;
+        border-left: 1px solid #ddd;
+        min-height: 800px;
+        padding: 50px 0 0 50px;
+        display: none;
+      }
+
+      article {
+        flex: 1;
+
+        padding: 0px 0px 50px 0;
+      }
+    }
+
+    .nav__bar {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      background: #f4f4f4;
+      text-align: right;
+      line-height: 40px;
+      font-size: 4vw;
+    }
+  }
+
+  .aside__lnb {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 0 0px 0;
+
+    li {
+      line-height: 45px;
+
+      a {
+        display: block;
+        border-bottom: 1px solid #ddd;
+
+        &::before {
+          content: "\e93e";
+          font-family: xeicon;
+          font-size: 8px;
+          vertical-align: middle;
+          margin: 0 15px 0 0;
+        }
+
+        &.active {
+          padding: 0 0 0 15px;
+          color: #fff;
+          background: #f5a100;
+          border-radius: 10px;
+          border-bottom: 1px solid transparent;
+        }
+      }
+    }
+  }
+
+  .aside__customer {
+    text-align: right;
+
+    img {
+      transform: translate(15%, 0%);
+    }
+
+    p {
+      text-align: end;
+    }
+
+    strong {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    hr {
+      margin: 10px 0;
+      border-top: 1px solid #f5a100;
+    }
+  }
+
+  .Article {
+    .tb_org02 {
+      width: 100%;
+      border-top: 2px solid #f5a100;
+      border-bottom: 1px solid #f5a100;
+      margin: 0 0 50px 0;
+
+      thead {
+        tr th {
+          padding: 10px 0;
+          text-align: center;
+          background: #fff2e9;
+          border-bottom: 1px solid #bfbfbf;
+          border-right: 1px solid #bfbfbf;
+        }
+
+        .bdOrg {
+          border-bottom: 1px solid #f5a100;
+        }
+      }
+
+      tbody {
+        tr td {
+          padding: 10px 0;
+          text-align: center;
+          border-right: 1px solid #bfbfbf;
+          border-bottom: 1px solid #bfbfbf;
+          color: #444444;
+        }
+
+        .bdOrg {
+          border-bottom: 1px solid #f5a100;
+        }
+
+        .td_listL {
+          letter-spacing: -1px;
+          padding: 0 0 3px 8px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .mt10 {
+      margin-top: 10px !important;
+      font-size: 3vw;
+      line-height: 2vh;
+    }
+
+    .tit {
+      line-height: 45px;
+      border-bottom: 1px solid #ddd;
+      margin: 0 0 50px 0;
+
+      strong {
+        font-size: 5vw;
+        font-weight: 500;
+        padding: 0 0 0 30px;
+      }
+    }
+
+    .bg {
+      position: relative;
+      height: 40vh;
+      background: url(../../public/assets/images/subpage_01.jpg) no-repeat right
+        top/cover;
+      border-left: 3px solid #f5a100;
+      padding: 100px 0 0 100px;
+      margin: 0 0 50px 0;
+      width: 100vw;
+
+      .case {
+        transform: translate(-25%, -20%);
+
+        h2 {
+          line-height: 70px;
+          font-size: 10vw;
+          font-weight: 800;
+          text-shadow: 1px 0 3px rgb(255 255 255 / 25%);
+          background: linear-gradient(to right top, #0a96ba, #f5a100, #333333);
+          color: transparent;
+          -webkit-background-clip: text;
+        }
+
+        p {
+          color: #ddd;
+          font-size: 17px;
+          text-indent: 5px;
+          font-weight: 300;
+        }
+      }
+    }
+
+    .sub__tit {
+      position: relative;
+      font-size: 5vw;
+      font-weight: 600;
+      margin: 0 0 20px 0;
+      padding: 0px 10px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -9px;
+        left: 0;
+        width: 3px;
+        height: 17px;
+        background: #f5a100;
+        margin: 10px 0 0 0;
+      }
+    }
+
+    .sub__des {
+      margin: 0 0 30px 0;
+      padding: 0 15px;
+      font-size: 4vw;
+      line-height: 5vw;
+    }
+
+    .sub__img {
+      display: flex;
+      gap: 15px;
+      margin: 0 0 50px 0;
+      padding: 0 15px;
+    }
+
+    .sub__service {
+      margin: 0 0 0 0;
+      padding: 0 15px;
+
+      > li {
+        position: relative;
+        padding: 10px 0 0 20px;
+        line-height: 3vh;
+        border-bottom: 1px solid #ddd;
+        font-weight: 500;
+        font-size: 4vw;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 13px;
+          left: 0;
+          width: 3px;
+          height: 3px;
+          background: #f5a100;
+        }
+      }
+
+      .txt {
+        font-size: 3.5vw;
+        font-weight: 400;
+        line-height: 3vh;
+      }
+    }
+  }
+}

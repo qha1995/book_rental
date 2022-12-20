@@ -87,7 +87,6 @@
 
     .MainSlider_slide figure {
       height: calc(78vh - 155px);
-
       filter: grayscale(1);
 
       &.on {
@@ -104,21 +103,21 @@
   // 파도
 
   .boxx {
-    width: 100vw;
+    width: 99.1vw;
     height: 300px;
     border-radius: 0;
 
     position: absolute;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
-    top: 43%;
+    top: 42.5%;
     z-index: 1;
 
     .wave {
       opacity: 1;
       position: absolute;
       top: 419%;
-      left: -275%;
+      left: -280%;
       background: #fff;
       width: 13000px;
       height: 13000px;

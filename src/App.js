@@ -48,7 +48,6 @@ const App = () => {
       <Header on={on} setOn={setOn} />
       <Routes>
         <Route path="/" element={<Main content={MAINSLIDRE} />} />
-
         <Route path="/sub01" element={<Sub01 content={MAINSLIDRE} />} />
         <Route path="/sub02" element={<Sub02 content={MAINSLIDRE} />} />
         <Route path="/sub03" element={<Sub03 content={MAINSLIDRE} />} />

@@ -1,19 +1,17 @@
-$mainColor: linear-gradient(
-  50deg,
-  rgba(3, 134, 245, 1) 0%,
-  rgba(24, 207, 192, 1) 100%
-);
-$wColor: #f9f9f9;
-$gColor: #555;
-$bColor: #111;
-$boColor: rgba(0, 0, 0, 0.75);
-$subColor: #026bfa;
 :root {
   --mc: #026bfa;
   --sc: #026bfa;
+  --cc: #555555;
   --lc: #f9f9f9;
+  --wl: #f4f4f4;
+  --ww: #ffffff;
   --dc: #444444;
   --gc: #dddddd;
+  --lg: linear-gradient(
+    50deg,
+    rgba(3, 134, 245, 1) 0%,
+    rgba(24, 207, 192, 1) 100%
+  );
 }
 
 body {

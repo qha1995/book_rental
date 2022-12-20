@@ -16,7 +16,7 @@
     font-size: 3rem;
     font-weight: 900;
     margin: 0 0 2rem 0;
-    color: common.$subColor;
+    color: var(--sc);
   }
 
   .open {
@@ -36,8 +36,8 @@
 
     i {
       padding: 1rem;
-      background: common.$mainColor;
-      color: common.$wColor;
+      background: var(--lg);
+      color: var(--lc);
       font-size: 1.5rem;
       border-radius: 50%;
     }

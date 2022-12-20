@@ -33,7 +33,7 @@ const Header = ({ on, setOn }) => {
     <header className={`Header ${on ? "os" : ""}`} ref={HL}>
       <div className="hd_wrap">
         <h1>
-          <a href="/">신시북</a>
+          <a href="https://qha1995.github.io/book_rental/">신시북</a>
         </h1>
         <nav className="Gnb">
           <ul>
