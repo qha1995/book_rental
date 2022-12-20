@@ -1,5 +1,5 @@
 {
-  "name": "portfolio_everland",
+  "name": "book_rental",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,12 +11,12 @@
     "react-colgroup": "^1.0.2",
     "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.1",
+    "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "react-table": "^7.8.0",
     "react-youtube": "^10.0.0",
-    "sass": "^1.55.0",
+    "sass": "^1.56.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
@@ -29,7 +29,7 @@
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },
-  "homepage": "https://qha1995.github.io/portfolio_everland/",
+  "homepage": "https://qha1995.github.io/book_rental/",
   "eslintConfig": {
     "extends": [
       "react-app",

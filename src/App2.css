@@ -1,0 +1,178 @@
+.MainSlider {
+    background: #ffffff;
+    padding:100px 0 0 0;
+    
+  
+  }
+  
+  .MainSlider .container {
+    position: relative;
+  }
+  
+  .MainSlider .box {
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    margin: 0 0 0 -540px;
+    width: 350px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 30px;
+    z-index: 999;
+  }
+  
+  .MainSlider .box::after {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: -20px;
+    width: 40px;
+    height: 2px;
+    background: rgba(24,207,192,1);
+  
+  }
+  
+  .MainSlider .box .tit {
+    font-size: 25px;
+    margin: 0 0 20px 0;
+  }
+  
+  .MainSlider .box p {
+    font-size: 15px;
+    font-weight: 300;
+    min-height: 120px;
+    text-align: left;
+    line-height: 1.45;
+    word-break: keep-all;
+  }
+  
+  .MainSlider .num {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--mc)
+  }
+  
+  .MainSlider .num span {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--dc)
+  }
+  
+  .MainSlider .arrows i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: var(--lc);
+   
+  }
+  
+  .MainSlider .arrows i:first-child {
+    margin: 0 0 0 -600px;
+  }
+  
+  .MainSlider .arrows i:last-child {
+    margin: 0 0 0 600px;
+  }
+  
+  .MainSlider .dots {
+    text-align: center;
+    font-size: 0;
+   transform: translateY(-100px);
+  
+  }
+  
+  .MainSlider .dots>li {
+    display: inline-block;
+    width: 4px;
+    height: 10px;
+    background: var(--lc);
+    margin: 10px;
+    vertical-align: middle;
+  
+  }
+  
+  .MainSlider .dots>li.on {
+    height: 30px;
+    background: #ffffff;
+  }
+  
+  .MainSlider .box .content {
+    margin: 0 0 40px 0;
+  }
+  
+  .MainSlider .MainSlider_slide figure {
+    height: calc(78vh - 155px);
+  
+  filter: grayscale(1);
+  
+  
+  }
+  
+  .MainSlider .MainSlider_slide figure.on {
+    filter: grayscale(0);
+    
+    transition:all 500ms ease-in-out;
+  }
+  
+  .MainSlider .MainSlider_slide figure img {
+    margin: 0 auto;
+  }
+  
+  
+  
+  
+  
+  /* 파도 */
+  
+  
+  .MainSlider .boxx {
+      width: 100vw;
+      height: 300px;
+      border-radius: 0;
+      background: lighten(#fff, 10%);
+      position: absolute;
+      overflow: hidden;
+      transform: translate3d(0, 0, 0);
+      top: 43%;
+      z-index: 1;}
+  
+  
+  .MainSlider .wave {
+    opacity: 1;
+    position: absolute;
+    top: 412%;
+    left:-275%;
+    background: #fff;
+    width: 13000px;
+    height: 13000px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 44%;
+    animation: drift 8000ms infinite linear;
+    overflow: hidden;
+  }
+  
+  .MainSlider .wave.-three {
+    animation: drift 15000ms infinite linear;
+    opacity: 0.9;
+    background: #fff;
+  }
+  
+  .MainSlider .wave.-two {
+    animation: drift 20000ms infinite linear;
+    opacity: 0.8;
+    background: #fff;
+  }
+  
+  
+  
+  
+  @keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+  

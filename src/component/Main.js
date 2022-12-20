@@ -1,24 +1,18 @@
-import React from 'react';
-import MainVisual from './MainVisual';
-import MainContent from './MainContent';
-import Portfolio from './Portfolio';
-import News from './News';
-import Promotion from './Promotion';
-
-import '../css/Main.scss';
+import React from "react";
+import Guide from "./Guide";
+import Best from "./Best";
+import News from "./News";
+import MainSlider from "./MainSlider";
 
 const Main = () => {
+  return (
+    <main className="Main">
+      <MainSlider />
+      <Guide />
+      <Best />
+      <News />
+    </main>
+  );
+};
 
-    return (
-        <main className='Main'>
-            <MainVisual />
-            <MainContent />
-            <Portfolio />
-            <News />
-            <Promotion />
-        </main>
-    )
-}
-
-export default Main
-
+export default Main;

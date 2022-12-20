@@ -21,9 +21,19 @@ const Article = ({ content, num }) => {
                     </p>
                 </div>
             </div>
+            <div className="sub__tit">
+                {content[num].tit}
+            </div>
+            <p className="sub__des">
+                {content[num].des}
+            </p>
 
-       
+            <div className="sub__img">
+                <figure>
+                    <img src={process.env.PUBLIC_URL + '/assets/images/article04_1.jpg'} alt="" />
+                </figure></div>
 
+            <Prom />
         </article>
     )
 }

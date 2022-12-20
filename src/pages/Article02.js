@@ -29,11 +29,11 @@ const Article = ({ content, num }) => {
 
             <table summary="티켓 (A, B, C,D)" className="tb_org02 mt10">
                 <colgroup>
-                    <col style={{ width: '94px' }} />
-                    <col style={{ width: '94px' }} />
-                    <col style={{ width: '94px' }} />
-                    <col style={{ width: '94px' }} />
-                    <col style={{ width: '200px' }} />
+                    <col style={{ width: '15%' }} />
+                    <col style={{ width: '12%' }} />
+                    <col style={{ width: '12%' }} />
+                    <col style={{ width: '12%' }} />
+                    <col style={{ width: '20%' }} />
 
                 </colgroup>
 

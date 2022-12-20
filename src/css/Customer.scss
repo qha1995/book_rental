@@ -1,0 +1,45 @@
+@use "common";
+
+.Customer {
+  font-size: 15px;
+  word-break: keep-all;
+
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin: 0 0 2rem 0;
+  }
+
+  .tel {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0 0 2rem 0;
+    color: common.$subColor;
+  }
+
+  .open {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  strong {
+    display: block;
+    line-height: 1.45;
+    margin: 0 0 2rem 0;
+  }
+
+  .sns {
+    display: flex;
+    gap: 1rem;
+
+    i {
+      padding: 1rem;
+      background: common.$mainColor;
+      color: common.$wColor;
+      font-size: 1.5rem;
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use "common";
+
+.Guide {
+  .inner {
+    display: flex;
+
+    figure {
+      flex: 1;
+      text-align: center;
+
+      &:hover img {
+        transform: scale(1.2);
+      }
+
+      img {
+        transition: 0.5s;
+      }
+    }
+
+    .box {
+      margin: 0 0 40px 0;
+      overflow: hidden;
+    }
+
+    .tit {
+      position: relative;
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0 0 20px 0;
+    }
+
+    .dec {
+      font-size: 15px;
+      margin: 0 0 30px 0;
+      line-height: 1.45;
+      /* white-space: pre-line; */
+      display: inline-block;
+      width: 70%;
+      min-height: 50px;
+      word-break: keep-all;
+    }
+  }
+}

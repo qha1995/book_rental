@@ -1,0 +1,123 @@
+@use "common";
+
+.Footer {
+  margin: 100px 0 0 0;
+
+  .top {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+
+    p {
+      background: common.$mainColor;
+      color: common.$wColor;
+      cursor: pointer;
+      font-size: 21px;
+      font-weight: 500;
+      margin: 0 0 50px;
+      padding: 30px 0;
+      text-align: center;
+    }
+  }
+
+  p {
+    line-height: 1.45;
+  }
+
+  .inner {
+    display: flex;
+    gap: 100px;
+    padding: 50px 0;
+    font-size: 14px;
+
+    & > * {
+      position: relative;
+      flex: 1;
+      padding: 20px 0;
+    }
+
+    & > * ~ *::after {
+      content: "";
+      position: absolute;
+      left: -50px;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .bottom {
+    color: #999;
+
+    .right {
+      position: absolute;
+      right: 195px;
+
+      .fl {
+        border: 0px solid transparent;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .Footer {
+    margin: 10rem 0 0 0;
+    width: auto;
+
+    .top {
+      border-bottom: 1px solid common.$gColor;
+      border-top: 1px solid common.$gColor;
+      padding: 0 3rem;
+
+      p {
+        background: common.$mainColor;
+        color: common.$wColor;
+        cursor: pointer;
+        font-size: 4vw;
+        font-weight: 400;
+        margin: 0;
+        padding: 30px 0;
+        text-align: center;
+        width: 250px;
+      }
+    }
+
+    p {
+      line-height: 1.45;
+    }
+
+    .inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 5rem 0;
+      font-size: 3vw;
+
+      & > * {
+        position: relative;
+        flex: 1;
+        padding: 2rem 0;
+      }
+
+      & > * ~ *::after {
+        content: "";
+        position: absolute;
+        left: -5rem;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .bottom {
+      color: #bbb;
+      padding: 0 3rem;
+    }
+  }
+}
