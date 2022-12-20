@@ -2,6 +2,7 @@ import React from "react";
 import Article04 from "./Article04";
 import Aside from "./Aside";
 import "../css/Subpage.scss";
+
 const Sub04 = ({ content }) => {
   const num = 3;
   return (

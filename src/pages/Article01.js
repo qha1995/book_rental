@@ -1,99 +1,211 @@
-import React from 'react'
+import React from "react";
 const Article = ({ content, num }) => {
+  return (
+    <article className="Article">
+      <div className="tit">
+        <strong>{content[num].tit}</strong>&nbsp;&nbsp; / &nbsp;&nbsp;
+        {content[0].tit}
+      </div>
+      <div className="bg">
+        <div className="case">
+          <div className="tit__log"></div>
+          <h2>{content[num].tit}</h2>
+          <p>{content[num].con}</p>
+        </div>
+      </div>
 
-    return (
-        <article className='Article'>
-            <div className="tit">
-                <strong>{content[num].tit}</strong>&nbsp;&nbsp; / &nbsp;&nbsp;{content[0].tit}
-            </div>
-            <div className='bg'>
-                <div className="case">
-                    <div className="tit__log">
-                        <img src={process.env.PUBLIC_URL + '/assets/images/.png'} alt="" />
-                    </div>
-                    <h2>
-                        {content[num].tit}
-                    </h2>
-                    <p>
-                        {content[num].con}
-                    </p>
-                </div>
-            </div>
+      <div className="sub__tit">기업 정신</div>
 
+      <ul className="sub__ul">
+        <li>
+          <strong></strong> 기본에 충실한 기업
+        </li>
+        <li>
+          <strong></strong> 고객과 직원을 존중하는 기업
+        </li>
+        <li>
+          <strong></strong> 창의적이고 열정적인 기업
+        </li>
+      </ul>
 
+      <div className="sub__tit">회사 조직도</div>
 
-            <div className="sub__tit">
-                {content[num].tit}
-            </div>
-            <p className="sub__des">
-                {content[num].des}
-            </p>
+      <div className="sub__img">
+        <figure>
+          <img
+            src={process.env.PUBLIC_URL + "/assets/images/article01_1.png"}
+            alt=""
+          />
+        </figure>
+      </div>
 
-            <div className="sub__img">
-                <figure>
-                    <img src={process.env.PUBLIC_URL + '/assets/images/article01_1.png'} alt="" />
-                </figure>
+      <div className="sub__tit">신시웨이 연혁 </div>
 
+      <ul className="sub__service">
+        <li>
+          2005 - 2007
+          <ul className="txt">
+            <li>- 2005 01 주식회사 신시웨이 설립(대표이사 정재훈)</li>
+            <li>- 2005.07 데이터베이스 접근제어 솔루션 dGriffin V1.0 출시</li>
+            <li>
+              - 2006.04 데이터베이스 접근제어 솔루션 dGriffin V1.0 GS 인증
+            </li>
+            <li>- 2006.05 국정원 보안적합성 검증(Oracle) 승인</li>
+            <li>- 2006.06 (본사 이전)서울시 서초구 양재동</li>
+            <li>- 2007.11 국정원 보안적합성 검증(Sybase, IQ, Altibase) 승인</li>
+          </ul>
+        </li>
 
-            </div>
+        <li>
+          2008 - 2010
+          <ul className="txt">
+            <li>- 2008.07 (본사 이전)경기도 성남시 중원구 상대원동</li>
+            <li>- 2008.08 기업부설연구소 설립</li>
+            <li>- 2008.08 한국산업기술진흥협회(KOITA) 인증</li>
+            <li>
+              - 2009.03 (특허 출원)데이터베이스 로그 정보 관리 장치 및 방법
+            </li>
+            <li>
+              - 2009.03 (특허 출원)데이터베이스 툴 식별 장치 및 방법2008.08
+              한국산업기술진흥협회(KOITA) 인증
+            </li>
+            <li>
+              - 2009.04 (특허 출원)웹어플리케이션 서버를 통한 데이터베이스 접근
+              감시 장치 및 방법
+            </li>
+            <li>- 2009.05 (특허 출원)SQL 마스킹 장치 및 방법</li>
+            <li>
+              - 2009.06 (특허 출원)에이전트를 이용한 데이터베이스 보안 장치 및
+              방법
+            </li>
+            <li>- 2009.06 중소벤처기업부 INNO-BIZ 인증</li>
+            <li>- 2009.06 데이터베이스 접근제어 솔루션 Petra v3.1 출시</li>
+            <li>- 2010.01 Petra v3.1 Common Criteria(EAL4) 인증 획득</li>
+            <li>- 2010.01 제주 R&D 센터 설립</li>
+          </ul>
+        </li>
 
-            <div className="sub__tit">
-                에버랜드 이용 방법
-            </div>
+        <li>
+          2011 - 2013
+          <ul className="txt">
+            <li>
+              - 2011.05 (특허 출원)개인정보 데이터베이스의 접근을 위한 전용 툴을
+              포함한 접근 관리 시스템 및 방법
+            </li>
+            <li>
+              - 2011.05 (특허 출원)개인정보 데이터베이스의 접근을 관리하는
+              가상공간 시스템 및 접근 관리 방법
+            </li>
+            <li>- 2011.07 원장변경솔루션 Petra Tracker 출시</li>
+            <li>- 2012.02 데이터베이스 암호화 솔루션 PetraCipher v1.0 출시</li>
+            <li>
+              - 2012.02 데이터베이스 암호화 솔루션 PetraCipher v1.0 GS 인증
+            </li>
+            <li>- 2013.05 개인정보 오남용 감사 솔루션 PetraPrimon v1.1 출시</li>
+          </ul>
+        </li>
 
-            <ul className="sub__service">
+        <li>
+          2014 - 2016
+          <ul className="txt">
+            <li>- 2015.08 최대주주 변경 (주)엑셈</li>
+            <li>- 2015.01 데이터베이스 권한 결재 솔루션 PetraSign v1.0 출시</li>
+            <li>- 2016.09 PetraCipher 파일 암호화 출시</li>
+            <li>- 2016.11 Petra v4.1 출시 및 Common Criteria(EAL4) 인증</li>
+          </ul>
+        </li>
 
-                <li >안전하고 즐거운 이용을 위하여 아래 물품의 반입을 제한하고 있습니다.
-                    <ul className='txt'>
-                        <li>- 버너/돗자리(1인용 방석 제외)/ 애완동물(안내견 제외)</li>
-                        <li>- 자전거/ 인라인/ 킥보드 등 소형탑승기구, 무선조종탑승기구</li>
-                    </ul>
-                </li>
+        <li>
+          2017 - 2018
+          <ul className="txt">
+            <li>- 2017.06 Petra v4.1 GS인증</li>
+            <li>- 2017.11 (본사 이전) 서울시 송파구 문정동</li>
+            <li>- 2018.07 서울특별시 「서울형 강소기업」 선정</li>
+            <li>- 2018.12 고용노동부 「2019 청년 친화 강소기업」 선정</li>
+            <li>
+              - 2018.12 과학기술정보통신부 「정보통신 중소기업 유공자」 포상
+            </li>
+          </ul>
+        </li>
 
-                <li>다른 손님에게 피해를 줄 수 있는 행동은 삼가 주세요.
-                    <ul className='txt'>
-                        <li>- 잔디, 꽃밭 훼손, 대기 동선에서 부정한 방법으로 줄 서기</li>
-                        <li>- 고성방가, 과격한 행동, 음주 후 어트랙션 이용, 벤치에 눕는 행위 등</li>
-                        <li>- 흡연은 흡연구역으로 표시된 지역에서만 가능합니다.</li>
-                    </ul></li>
-                <li>가지고 오신 도시락은 피크닉 영역에서 이용해 주세요.
-                    <ul className='txt'>
-                        <li>- 레스토랑 및 야외 테라스에서는 도시락을 드실 수 없습니다.</li>
-                        <li>- 피크닉 영역은 현장의 가이드북을 참고해 주세요.</li>
-                    </ul></li>
-                <li>동물에게 음식을 주거나 플래시를 켜고 촬영하는 것은 삼가 주세요</li>
-                <li>어린이는 목말을 태우는 것은 위험하오니 삼가 주세요.</li>
-                <li>어트랙션 이용 Tip
-                    <ul className='txt'>
-                        <li>- 지정된 좌석에서 안전장치를 정확히 잠그고 바른 자세로 이용해 주세요.</li>
-                        <li>- 떨어지기 쉬운 물건은 소지하지 말고 탑승해 주세요.</li>
-                        <li>- 탑승 중에는 촬영, 취식 같은 위험한 행동은 삼가 주세요</li>
-                        <li>- 탑승객의 건강 상태에 따른 탑승자 안전 기준을 준수해 주세요.</li>
-                        <li>- 고객과 동물의 안전을 위하여 일부 어트랙션과 동물원 일부 시설은 보조견의 동반 이용이 제한될 수 있습니다.</li>
-                    </ul></li>
-                <li>스마트 줄서기 시행 안내
-                    <ul className='txt'>
-                        <li>- 스마트줄서기 적용 기종 이용 시 에버랜드 App에서 해당 시설 스마트 줄서기 신청 후
-                            예약된 시간에 이용하실 수 있습니다.</li>
-                    </ul></li>
-                <li>장애인 탑승예약제도 시행 안내
-                    <ul className='txt'>
-                        <li>- 오랜시간 줄 서기가 어려운 일부 장애인 손님들의 이용을 돕고자 '장애인 탑승예약제'를 시행하오니
-                            손님들의 많은 협조를 부탁드립니다.</li>
-                    </ul></li>
-                <li>최선을 다하는 근무자를 존중해 주십시오.
-                    <ul className='txt'>
-                        <li>- 실수나 미흡한 점이 있더라도 반말이나 욕설, 신체 접촉은 삼가 주세요.</li>
-                        <li>- 건의사항은 관리자를 호출해 말씀해 주세요. (대표번호 : 031-320-5000)</li>
-                    </ul></li>
-            </ul>
+        <li>
+          2019 - 2021
+          <ul className="txt">
+            <li>- 2019.04 서울산업진흥원 「HI SEOUL 브랜드 기업」 지정</li>
+            <li>
+              - 2019.12 (특허 출원)DB 접속을 위한 보안 세션의 장애 대응을
+              지원하는 중계 시스템 및 방법
+            </li>
+            <li>
+              - 2019.12 (특허 출원)웹 기반 SQL 툴을 이용한 접근 제어 시스템 및
+              방법
+            </li>
+            <li>- 2019.12 여성가족부 「2019 가족친화인증기업」 선정</li>
+            <li>- 2019.12 고용노동부 「2020 청년친화강소기업」 선정</li>
+            <li>- 2020.04 PetraCipher v3.2 Common Criteria(PP준수) 인증</li>
+            <li>- 2020.04 PetraCipher v3.2 출시</li>
+            <li>- 2020.07 중소벤처기업부 MAIN-BIZ 인증</li>
+            <li>- 2020.09 고용노동부 「근무혁신 인센티브제 우수 기업」 선정</li>
+            <li>- 2020.11 서울특별시 「일·생활균형 우수 기업」 선정</li>
+            <li>- 2020.11 PetraCipher v3.2 GS 인증</li>
+            <li>- 2020.12 고용노동부 「2021 청년친화강소기업」 선정</li>
+            <li>- 2021.06 중소벤처기업부 「2021 인재육성형 중소기업」 선정</li>
+          </ul>
+        </li>
 
-            <div className="sub__img">
-                <figure>
-                    <img src={process.env.PUBLIC_URL + '/assets/images/article01_2.png'} alt="" />
-                </figure></div>
-        </article>
-    )
-}
+        <li>
+          2022
+          <ul className="txt">
+            <li>
+              - 2022.06 (특허 등록) 데이터베이스에 저장된 데이터에 대한 접근
+              제어를 위한 서비스 제공 시스템 및 방법
+            </li>
+            <li>- 2022.06 「2022 중소기업인 대회」 국무총리 표창 수상</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div className="sub__tit">신시웨이 오시는 길 </div>
+
+      <table summary="티켓 (A, B, C,D)" className="tb_org02 mt10">
+        <colgroup>
+          <col style={{ width: "10%" }} />
+          <col style={{ width: "30%" }} />
+          <col style={{ width: "15%" }} />
+        </colgroup>
+
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">오시는 길</th>
+            <th scope="col">전화번호</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>본사</td>
+            <td>
+              서울특별시 송파구 법원로 9길 26(문정동) 에이치비지니스파크 D동 4층
+            </td>
+            <td> 02) 6281-9607</td>
+          </tr>
+          <tr>
+            <td>제주R&D센터</td>
+            <td>제주특별자치도 제주시 첨단로 213-3 319호(스마트빌딩)</td>
+            <td>02) 6281-9607</td>
+          </tr>
+          <tr>
+            <td className="bdOrg">대전기술지원센터</td>
+            <td className="bdOrg">
+              대전광역시 유성구 테크노9로 35 대전테크노파크 IT 전용벤처타운
+              304호
+            </td>
+            <td className="bdOrg">02) 6281-9607</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+  );
+};
 
 export default Article;
