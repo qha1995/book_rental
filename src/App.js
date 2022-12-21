@@ -8,12 +8,13 @@ import Sub02 from "./pages/Sub02";
 import { Route, Routes, useSearchParams } from "react-router-dom";
 import Main from "./component/Main";
 import { useEffect, useState } from "react";
-import Board from "./pages/Board";
 import Cart from "./shop/Cart";
 import Itm from "./shop/Itm";
 import List from "./shop/List";
+import Glist from "./shop/Glist";
 import Category from "./shop/Category";
 import "./css/ShopDetail.scss";
+// import Board from "./pages/Board";
 // import Search from "./component/Search";
 
 const App = () => {
@@ -55,6 +56,7 @@ const App = () => {
   const [cart, setCart] = useState([]);
 
   const [list, setList] = useState([]);
+  const [glist, setGlist] = useState([]);
   const [input, setInput] = useState({
     title: "",
     content: "",
@@ -115,11 +117,21 @@ const App = () => {
           path="/list"
           element={<List shopList={itm} cart={cart} setCart={setCart} />}
         />
+        <Route
+          path="/glist"
+          element={<Glist shopList={itm} cart={cart} setCart={setCart} />}
+        />
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
 
-        {/* <Route path='/detail/:id' element={<Detail user={user} />} /> */}
-
+        <Route path="/shopList" element={<List shopList={itm} />} />
+        <Route path="/shopList/:cate" element={<Category shopList={itm} />} />
         <Route
+          path="/shopItem/:itm"
+          element={<Itm shopList={itm} cart={cart} setCart={setCart} />}
+        />
+      </Routes>
+
+      {/* <Route
           path="/board"
           element={
             <Board
@@ -129,15 +141,7 @@ const App = () => {
               setList={setList}
             />
           }
-        />
-
-        <Route path="/shopList" element={<List shopList={itm} />} />
-        <Route path="/shopList/:cate" element={<Category shopList={itm} />} />
-        <Route
-          path="/shopItem/:itm"
-          element={<Itm shopList={itm} cart={cart} setCart={setCart} />}
-        />
-      </Routes>
+        /> */}
 
       {/* <Route
           path="/search"

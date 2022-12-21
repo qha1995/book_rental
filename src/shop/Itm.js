@@ -48,6 +48,9 @@ const Itm = ({ shopList, cart, setCart }) => {
           <button className="bts">
             <a href="https://qha1995.github.io/book_rental/">back</a>
           </button>
+          <button className="btp">
+            <a href="/">대여 가능 인원 수: 10 명</a>
+          </button>
         </div>
       </div>
     </section>

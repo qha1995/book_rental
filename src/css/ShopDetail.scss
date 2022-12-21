@@ -184,6 +184,17 @@
     cursor: pointer;
     font-weight: 500;
   }
+  .btp {
+    font-size: 15px;
+    cursor: pointer;
+    background: var(--mc);
+    border: 10px solid transparent;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0 0 0 180px;
+  }
 }
 
 .searchList {

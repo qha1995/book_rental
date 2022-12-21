@@ -14,7 +14,6 @@ const PTF = [
   { id: 4, title: "바깥은 여름" },
 ];
 
-// 배열 메소드를 공부하기... 검색하기... 스프레드 연산자...
 const NPTF = [...PTF, PTF[0]].splice(1, PTF.length);
 
 const Best = () => {
@@ -56,7 +55,6 @@ const Best = () => {
             >
               {PTF.map((building) => {
                 return (
-                  // <Link to={`/detail/${it.id}`}>
                   <figure key={building.id}>
                     <div className="box">
                       <img
@@ -71,7 +69,6 @@ const Best = () => {
                     </div>
                     <div className="des">{building.title}</div>
                   </figure>
-                  // </Link>
                 );
               })}
             </Slider>
