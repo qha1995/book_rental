@@ -3,7 +3,7 @@ import "../css/Footer.scss";
 
 const FLINK = [
   { id: 0, name: "FAMILY SITE", link: "" },
-  { id: 1, name: "신시웨이", link: "http://rnc.samsungcnt.com/" },
+  { id: 1, name: "신시웨이", link: "https://www.sinsiway.com/" },
   { id: 2, name: "엑셈", link: "https://ex-em.com/" },
 ];
 

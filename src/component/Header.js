@@ -5,11 +5,11 @@ import "../css/Header.scss";
 const NAVLINK = [
   { id: 1, menu: "회사 소개", link: "/sub01" },
   { id: 2, menu: "이용 방법", link: "/sub02" },
-  { id: 3, menu: "도서 보관함", link: "/sub03" },
-  { id: 4, menu: "예약 신청", link: "/sub04" },
+  { id: 3, menu: "도서 리스트", link: "/list" },
+  { id: 4, menu: "도서 보관함", link: "/cart" },
 ];
 
-const Header = ({ on, setOn }) => {
+const Header = ({ cart, on, setOn }) => {
   const [TG, setTG] = useState([false, false]);
   const HL = useRef();
 
@@ -147,6 +147,7 @@ const Header = ({ on, setOn }) => {
               </div>
             </div>
           </div>
+
           <ul className="project">
             <li>
               <a href="#!">로그인</a>

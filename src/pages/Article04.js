@@ -20,13 +20,11 @@ const Article = ({ content, num }) => {
       <div className="sub__img">
         <figure>
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/article04_1.jpg"}
+            src={process.env.PUBLIC_URL + "/assets/images/article01_1.jpg"}
             alt=""
           />
         </figure>
       </div>
-
-      <Prom />
     </article>
   );
 };

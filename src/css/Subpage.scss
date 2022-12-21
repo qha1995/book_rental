@@ -197,7 +197,12 @@
 
   .sub__des {
     margin: 0 0 100px 0;
-    font-size: 17px;
+    font-size: 19px;
+    font-weight: 500;
+    strong {
+      font-family: xeicon;
+      color: var(--mc);
+    }
   }
 
   .sub__ul {
@@ -244,7 +249,7 @@
     .txt {
       font-size: 17px;
       font-weight: 300;
-      line-height: 23px;
+      line-height: 25px;
       margin: 0 0 20px 0;
     }
   }

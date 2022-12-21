@@ -1,18 +1,23 @@
+import axios from "axios";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 import Totop from "./component/Totop";
 import Wrapper from "./component/Wrapper";
 import Sub01 from "./pages/Sub01";
 import Sub02 from "./pages/Sub02";
-import Sub03 from "./pages/Sub03";
-import Sub04 from "./pages/Sub04";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useSearchParams } from "react-router-dom";
 import Main from "./component/Main";
-import Mopen from "./component/Mopen";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Board from "./pages/Board";
+import Cart from "./shop/Cart";
+import Itm from "./shop/Itm";
+import List from "./shop/List";
+import Category from "./shop/Category";
+import "./css/ShopDetail.scss";
+// import Search from "./component/Search";
 
 const App = () => {
-  const MAINSLIDRE = [
+  const INFORMATION = [
     {
       id: 0,
       tit: "회사 소개",
@@ -30,35 +35,124 @@ const App = () => {
     },
     {
       id: 2,
-      tit: "도서 보관함",
-      con: "관심있는 도서를 보관하세요.",
-      des: "도서를 보관하는 방법을 소개합니다.",
-      link: "/sub03",
+      tit: "도서 리스트",
+      con: "보고싶은 도서를 예약하세요.",
+      des: "도서를 예약하는 방법을 소개합니다.",
+      link: "/list",
     },
     {
       id: 3,
-      tit: "예약 신청",
-      con: "보고싶은 도서를 예약하세요.",
-      des: "도서를 예약하는 방법을 소개합니다.",
-      link: "/sub04",
+      tit: "도서 보관함",
+      con: "관심있는 도서를 보관하세요.",
+      des: "도서를 보관하는 방법을 소개합니다.",
+      link: "/cart",
     },
   ];
+
   const [on, setOn] = useState(false);
+
+  const [itm, setItm] = useState();
+  const [cart, setCart] = useState([]);
+
+  const [list, setList] = useState([]);
+  const [input, setInput] = useState({
+    title: "",
+    content: "",
+    check: false,
+  });
+
+  // const [searchInput, setSearchInput] = useState("");
+  // const [search, setSearch] = useSearchParams();
+
+  // const searchRe = search.get("search");
+
+  useEffect(() => {
+    const url = "https://desipossa.github.io/shop_cra/assets/data.json";
+    const getProduct = async () => {
+      const res = await axios.get(url);
+
+      const shopdata = res.data.slice(85, 195).map((it) => {
+        return {
+          id: it.id,
+          name: it.name,
+          src: it.image_link,
+          brand: it.brand,
+          cate: it.category,
+          price: it.price * 1450,
+          des: it.description,
+          color: it.product_colors,
+          time: new Date(Date.parse(it.created_at)),
+          type: it.product_type,
+        };
+      });
+      setItm(shopdata);
+      // console.log(res.data);
+      // console.log(shopdata);
+    };
+    getProduct();
+  }, []);
+
+  // const [os, setOs] = useState(false);
   return (
     <Wrapper>
-      <Header on={on} setOn={setOn} />
+      <Header
+        on={on}
+        setOn={setOn}
+        cart={cart}
+        shopList={itm}
+        // searchInput={searchInput}
+        // setSearchInput={setSearchInput}
+        // search={search}
+        // setSearch={setSearch}
+        // os={os}
+        // setOs={setOs}
+      />
       <Routes>
-        <Route path="/" element={<Main content={MAINSLIDRE} />} />
-        <Route path="/sub01" element={<Sub01 content={MAINSLIDRE} />} />
-        <Route path="/sub02" element={<Sub02 content={MAINSLIDRE} />} />
-        <Route path="/sub03" element={<Sub03 content={MAINSLIDRE} />} />
-        <Route path="/sub04" element={<Sub04 content={MAINSLIDRE} />} />
+        <Route path="/" element={<Main content={INFORMATION} />} />
+        <Route path="/sub01" element={<Sub01 content={INFORMATION} />} />
+        <Route path="/sub02" element={<Sub02 content={INFORMATION} />} />
+        <Route
+          path="/list"
+          element={<List shopList={itm} cart={cart} setCart={setCart} />}
+        />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+
         {/* <Route path='/detail/:id' element={<Detail user={user} />} /> */}
+
+        <Route
+          path="/board"
+          element={
+            <Board
+              input={input}
+              setInput={setInput}
+              list={list}
+              setList={setList}
+            />
+          }
+        />
+
+        <Route path="/shopList" element={<List shopList={itm} />} />
+        <Route path="/shopList/:cate" element={<Category shopList={itm} />} />
+        <Route
+          path="/shopItem/:itm"
+          element={<Itm shopList={itm} cart={cart} setCart={setCart} />}
+        />
       </Routes>
+
+      {/* <Route
+          path="/search"
+          element={
+            <Search
+              shopList={itm}
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
+              searchRe={searchRe}
+            />
+          }
+        /> */}
 
       <Footer />
       <Totop />
-      <Mopen on={on} setOn={setOn} />
     </Wrapper>
   );
 };

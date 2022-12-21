@@ -11,9 +11,9 @@ const Aside = () => {
       <div className="aside__customer">
         <img src={process.env.PUBLIC_URL + "/assets/images/logo.png"} alt="" />
         <p>
-          <strong>전화문의 051-331-3354 </strong>
+          <strong>Call : 02-6281-9607 </strong>
           <hr />
-          <span>e-mail : qha1995@github.io</span>
+          <span>E-mail : bomin1995@naver.com</span>
         </p>
       </div>
     </aside>

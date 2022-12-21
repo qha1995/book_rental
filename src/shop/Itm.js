@@ -1,0 +1,57 @@
+import React, { useEffect, useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
+const Itm = ({ shopList, cart, setCart }) => {
+  const { itm } = useParams();
+  const navigate = useNavigate();
+  const matchItm = shopList.find((it) => itm === String(it.id));
+  return (
+    <section className="shopItm">
+      <div className="inner">
+        <div className="box">
+          <img src={matchItm.src} alt="" />
+        </div>
+        <div className="right">
+          <div className="name">{matchItm.name}</div>
+          <div className="des">{matchItm.des.substring(0, 300)} ...</div>
+          <ul className="color">
+            {matchItm.color.map((color, idx) => {
+              return (
+                <li style={{ background: color.hex_value }} key={idx}>
+                  {color.hex_value}
+                </li>
+              );
+            })}
+          </ul>
+          <div className="price">
+            <span>{matchItm.price.toLocaleString()}</span> 원
+          </div>
+          <button
+            className="btn"
+            onClick={() => {
+              setCart([
+                ...cart,
+                {
+                  id: matchItm.id,
+                  name: matchItm.name,
+                  des: matchItm.des,
+                  src: matchItm.src,
+                  price: matchItm.price,
+                  e: 1,
+                },
+              ]);
+              navigate("/cart");
+            }}
+          >
+            장바구니 담기
+          </button>
+          <button className="bts">
+            <a href="https://qha1995.github.io/book_rental/">back</a>
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Itm;

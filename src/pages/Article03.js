@@ -20,7 +20,7 @@ const Article = ({ content, num }) => {
       <div className="sub__img">
         <figure>
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/article03_1.jpg"}
+            src={process.env.PUBLIC_URL + "/assets/images/article01_1.jpg"}
             alt=""
           />
         </figure>
@@ -28,7 +28,7 @@ const Article = ({ content, num }) => {
       <div className="sub__img">
         <figure>
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/article03_2.jpg"}
+            src={process.env.PUBLIC_URL + "/assets/images/article01_2.jpg"}
             alt=""
           />
         </figure>
@@ -36,7 +36,7 @@ const Article = ({ content, num }) => {
       <div className="sub__img">
         <figure>
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/article03_3.jpg"}
+            src={process.env.PUBLIC_URL + "/assets/images/article01_3.jpg"}
             alt=""
           />
         </figure>
@@ -44,7 +44,7 @@ const Article = ({ content, num }) => {
       <div className="sub__img">
         <figure>
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/article03_4.jpg"}
+            src={process.env.PUBLIC_URL + "/assets/images/article01_4.jpg"}
             alt=""
           />
         </figure>

@@ -14,7 +14,9 @@ const Article = ({ content, num }) => {
         </div>
       </div>
       <div className="sub__tit">도서 대출 자격</div>
-      <p className="sub__des">신시북 대출증 발급 회원</p>
+      <p className="sub__des">
+        <strong></strong> 신시북 대출증 발급 회원
+      </p>
 
       <div className="sub__tit">대여 요금 안내</div>
 
