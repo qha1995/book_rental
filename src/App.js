@@ -98,6 +98,7 @@ const App = () => {
         cart={cart}
         shopList={itm}
         bookList={book}
+        bookAlist={alist}
 
         // os={os}
         // setOs={setOs}
@@ -114,6 +115,7 @@ const App = () => {
               cart={cart}
               setCart={setCart}
               bookAlist={alist}
+              bookList={book}
             />
           }
         />
@@ -125,19 +127,38 @@ const App = () => {
               cart={cart}
               setCart={setCart}
               bookAlist={alist}
+              bookList={book}
             />
           }
         />
         <Route
           path="/cart"
-          element={<Cart cart={cart} setCart={setCart} bookList={book} />}
+          element={
+            <Cart
+              cart={cart}
+              setCart={setCart}
+              bookList={book}
+              bookAlist={alist}
+            />
+          }
         />
 
-        <Route path="/shopList" element={<List shopList={itm} />} />
+        <Route
+          path="/shopList"
+          element={<List shopList={itm} bookList={book} bookAlist={alist} />}
+        />
         {/* <Route path="/shopList/:cate" element={<Category shopList={itm} />} /> */}
         <Route
           path="/shopItem/:itm"
-          element={<Itm shopList={itm} cart={cart} setCart={setCart} />}
+          element={
+            <Itm
+              shopList={itm}
+              cart={cart}
+              setCart={setCart}
+              bookList={book}
+              bookAlist={alist}
+            />
+          }
         />
       </Routes>
 
