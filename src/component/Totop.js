@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { gsap } from "gsap";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
-//gsap... javascript animation, styled-component...
 
 const Btn = styled.div`
   position: fixed;

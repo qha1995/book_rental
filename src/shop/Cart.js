@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+const PTF = [
+  { id: 1, title: "럭키 드로우" },
+  { id: 2, title: "백광" },
+  { id: 3, title: "바깥은 여름" },
+  { id: 4, title: "너무 한낮의 연애" },
+];
+
 const Cart = ({ cart, setCart }) => {
   useEffect(() => {
     setCart(
@@ -29,12 +36,23 @@ const Cart = ({ cart, setCart }) => {
           {cart.map((ca, idx) => {
             return (
               <tr key={idx}>
-                <td className="box" style={{ width: "10rem" }}>
+                <td className="box" style={{ width: "100px" }}>
                   <Link to={"/shopItem/" + ca.id}>
-                    <img src={ca.src} alt="" />
+                    <img
+                      key={idx}
+                      src={
+                        process.env.PUBLIC_URL +
+                        "/assets/images/main_best0" +
+                        ((idx % PTF.length) + 1) +
+                        ".jpg"
+                      }
+                      alt=""
+                    />
+
+                    {/* <img src={ca.src} alt="" /> */}
                   </Link>
                 </td>
-                <td className="name" style={{ width: "30rem" }}>
+                <td className="name" style={{ width: "300px" }}>
                   <Link to={"/shopItem/" + ca.id}>{ca.name} </Link>
                 </td>
                 <td className="des">
@@ -42,7 +60,7 @@ const Cart = ({ cart, setCart }) => {
                     {ca.des.substring(0, 200)} ...
                   </Link>
                 </td>
-                <td className="price" style={{ width: "15rem" }}>
+                <td className="price" style={{ width: "150px" }}>
                   <span>{ca.price.toLocaleString()}</span> 원
                 </td>
               </tr>

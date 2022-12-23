@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const List = ({ shopList }) => {
-  //const cateList = [...shopList];
+const PTF = [
+  { id: 1, title: "럭키 드로우" },
+  { id: 2, title: "백광" },
+  { id: 3, title: "바깥은 여름" },
+  { id: 4, title: "너무 한낮의 연애" },
+];
 
+const List = ({ shopList }) => {
   const [sortList, onSortList] = useState(shopList);
   const rowPrice = [...sortList].sort((a, b) => a.price - b.price);
   const hiPrice = [...sortList].sort((a, b) => b.price - a.price);
@@ -30,32 +35,33 @@ const List = ({ shopList }) => {
           </ul>
         </li>
       </ul>
+
       <div className="inner">
-        {sortList.map((it) => {
+        {sortList.map((it, idx) => {
           return (
             <>
-              <figure key={it.id}>
-                <Link to={"/shopItem/" + it.id}>
+              <Link to={"/shopItem/" + it.id}>
+                <figure>
                   <div className="box">
-                    <img src={it.src} alt="" />
+                    <img
+                      key={idx}
+                      src={
+                        process.env.PUBLIC_URL +
+                        "/assets/images/main_best0" +
+                        ((idx % PTF.length) + 1) +
+                        ".jpg"
+                      }
+                      alt=""
+                    />
                   </div>
-                  <div className="name">{it.name}</div>
-                  <div className="des">{it.des.substring(0, 100)} ...</div>
-                  <div className="price">
-                    <span>{it.price.toLocaleString()}</span> 원
-                  </div>
-                </Link>
-              </figure>
 
-              <figure key={it.id}>
-                <Link to={"/shopItem/" + it.id}>
                   <div className="name">{it.name}</div>
                   <div className="des">{it.des.substring(0, 100)} ...</div>
                   <div className="price">
                     <span>{it.price.toLocaleString()}</span> 원
                   </div>
-                </Link>
-              </figure>
+                </figure>
+              </Link>
             </>
           );
         })}

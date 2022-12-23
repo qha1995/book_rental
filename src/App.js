@@ -14,8 +14,6 @@ import List from "./shop/List";
 import Glist from "./shop/Glist";
 import Category from "./shop/Category";
 import "./css/ShopDetail.scss";
-// import Board from "./pages/Board";
-// import Search from "./component/Search";
 
 const App = () => {
   const INFORMATION = [
@@ -55,110 +53,77 @@ const App = () => {
   const [itm, setItm] = useState();
   const [cart, setCart] = useState([]);
 
-  const [list, setList] = useState([]);
-  const [glist, setGlist] = useState([]);
-  const [input, setInput] = useState({
-    title: "",
-    content: "",
-    check: false,
-  });
+  function Blist() {
+    const [book, getBook] = useState([]);
+    const [pageNo, setPageNo] = useState(1);
 
-  // const [searchInput, setSearchInput] = useState("");
-  // const [search, setSearch] = useSearchParams();
-
-  // const searchRe = search.get("search");
-
-  useEffect(() => {
-    const url = "https://desipossa.github.io/shop_cra/assets/data.json";
-    const getProduct = async () => {
-      const res = await axios.get(url);
-
-      const shopdata = res.data.slice(85, 195).map((it) => {
-        return {
-          id: it.id,
-          name: it.name,
-          src: it.image_link,
-          brand: it.brand,
-          cate: it.category,
-          price: it.price * 1450,
-          des: it.description,
-          color: it.product_colors,
-          time: new Date(Date.parse(it.created_at)),
-          type: it.product_type,
-        };
-      });
-      setItm(shopdata);
-      // console.log(res.data);
-      // console.log(shopdata);
+    const getApi = async () => {
+      const r = await axios.get(
+        `https://apis.data.go.kr/4050000/libebook/getLibebook?serviceKey=nmPIjJ%2Bj0FufPiP6k4BLPlq3n%2B46QZN%2B6hgSINrrxqk3nNwnoHX2ynqX6Dlgr3xFeivGPus2vgmh6Ifx1vdu1g%3D%3D&pageNo=${pageNo}&numOfRows=100`
+      );
+      getBook(r.data);
     };
-    getProduct();
-  }, []);
 
-  // const [os, setOs] = useState(false);
-  return (
-    <Wrapper>
-      <Header
-        on={on}
-        setOn={setOn}
-        cart={cart}
-        shopList={itm}
-        // searchInput={searchInput}
-        // setSearchInput={setSearchInput}
-        // search={search}
-        // setSearch={setSearch}
-        // os={os}
-        // setOs={setOs}
-      />
-      <Routes>
-        <Route path="/" element={<Main content={INFORMATION} />} />
-        <Route path="/sub01" element={<Sub01 content={INFORMATION} />} />
-        <Route path="/sub02" element={<Sub02 content={INFORMATION} />} />
-        <Route
-          path="/list"
-          element={<List shopList={itm} cart={cart} setCart={setCart} />}
+    const shopdata = book.map((it) => {
+      return {
+        id: it.no,
+        name: it.ebk_nm,
+        src: it.aut_nm,
+        brand: it.pblshr,
+        gnr: it.gnr,
+        total: it.totalCount,
+        des: it.cn_intro,
+        pn: pageNo,
+        type: it.avlbl_envrmt,
+      };
+    });
+
+    setItm(shopdata);
+    useEffect(() => {
+      getApi();
+    }, [pageNo]);
+
+    // const [os, setOs] = useState(false);
+    return (
+      <Wrapper>
+        <Header
+          on={on}
+          setOn={setOn}
+          cart={cart}
+          shopList={itm}
+
+          // os={os}
+          // setOs={setOs}
         />
-        <Route
-          path="/glist"
-          element={<Glist shopList={itm} cart={cart} setCart={setCart} />}
-        />
-        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Routes>
+          <Route path="/" element={<Main content={INFORMATION} />} />
+          <Route path="/sub01" element={<Sub01 content={INFORMATION} />} />
+          <Route path="/sub02" element={<Sub02 content={INFORMATION} />} />
+          <Route
+            path="/list"
+            element={<List shopList={itm} cart={cart} setCart={setCart} />}
+          />
+          <Route
+            path="/glist"
+            element={<Glist shopList={itm} cart={cart} setCart={setCart} />}
+          />
+          <Route
+            path="/cart"
+            element={<Cart cart={cart} setCart={setCart} />}
+          />
 
-        <Route path="/shopList" element={<List shopList={itm} />} />
-        <Route path="/shopList/:cate" element={<Category shopList={itm} />} />
-        <Route
-          path="/shopItem/:itm"
-          element={<Itm shopList={itm} cart={cart} setCart={setCart} />}
-        />
-      </Routes>
-
-      {/* <Route
-          path="/board"
-          element={
-            <Board
-              input={input}
-              setInput={setInput}
-              list={list}
-              setList={setList}
-            />
-          }
-        /> */}
-
-      {/* <Route
-          path="/search"
-          element={
-            <Search
-              shopList={itm}
-              searchInput={searchInput}
-              setSearchInput={setSearchInput}
-              searchRe={searchRe}
-            />
-          }
-        /> */}
-
-      <Footer />
-      <Totop />
-    </Wrapper>
-  );
+          <Route path="/shopList" element={<List shopList={itm} />} />
+          <Route path="/shopList/:cate" element={<Category shopList={itm} />} />
+          <Route
+            path="/shopItem/:itm"
+            element={<Itm shopList={itm} cart={cart} setCart={setCart} />}
+          />
+        </Routes>
+        <Footer />
+        <Totop />
+      </Wrapper>
+    );
+  }
 };
 
 export default App;
