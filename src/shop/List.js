@@ -61,10 +61,10 @@ const PTF = [
 
 const List = ({ bookAlist }) => {
   const [book, onSortList] = useState(bookAlist);
-  const rowPrice = [...book].sort((a, b) => a.price - b.price);
-  const hiPrice = [...book].sort((a, b) => b.price - a.price);
-  const newProduct = [...book].sort((a, b) => b.id - a.id);
-  const inkki = [...book].sort((a, b) => b.name.length - a.name.length);
+  const rowNo = [...book].sort((a, b) => a.ebk_nm - b.ebk_nm);
+  const rowName = [...book].sort((a, b) => a.aut_nm - b.aut_nm);
+  const rowPbl = [...book].sort((a, b) => a.pblshr - b.pblshr);
+  const loanOk = [...book].sort((a, b) => a.loan_avlbl_yn - b.loan_avlbl_yn);
 
   const newSort = (it) => {
     onSortList(it);
@@ -79,10 +79,10 @@ const List = ({ bookAlist }) => {
         <li className="line">line</li>
         <li>
           <ul className="option">
-            <li onClick={() => newSort(rowPrice)}>도서 명</li>
-            <li onClick={() => newSort(hiPrice)}>저자 명</li>
-            <li onClick={() => newSort(newProduct)}>출판사 명</li>
-            <li onClick={() => newSort(inkki)}>대출 가능 도서</li>
+            <li onClick={() => newSort(rowNo)}>도서 명</li>
+            <li onClick={() => newSort(rowName)}>저자 명</li>
+            <li onClick={() => newSort(rowPbl)}>출판사 명</li>
+            <li onClick={() => newSort(loanOk)}>대출 가능 도서</li>
           </ul>
         </li>
       </ul>

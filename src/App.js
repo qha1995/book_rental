@@ -81,6 +81,8 @@ const App = () => {
   //     resultCode: it.resultCode,
   //     resulitMsg: it.resulitMsg,
   //     totalCount: it.totalCount,
+  //aut_nm:it.aut_nm,
+  //loan_avlbl_yn:it.loan_avlbl_yn
   //   };
   // });
   // setItm(shopdata);
