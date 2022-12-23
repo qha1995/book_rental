@@ -95,7 +95,7 @@ const App = () => {
         setOn={setOn}
         cart={cart}
         shopList={itm}
-        booklist={book}
+        bookList={book}
 
         // os={os}
         // setOs={setOs}
@@ -111,7 +111,7 @@ const App = () => {
               shopList={itm}
               cart={cart}
               setCart={setCart}
-              bookalist={alist}
+              bookAlist={alist}
             />
           }
         />
@@ -122,13 +122,13 @@ const App = () => {
               shopList={itm}
               cart={cart}
               setCart={setCart}
-              bookalist={alist}
+              bookAlist={alist}
             />
           }
         />
         <Route
           path="/cart"
-          element={<Cart cart={cart} setCart={setCart} booklist={book} />}
+          element={<Cart cart={cart} setCart={setCart} bookList={book} />}
         />
 
         <Route path="/shopList" element={<List shopList={itm} />} />

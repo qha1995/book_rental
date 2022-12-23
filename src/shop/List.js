@@ -59,8 +59,8 @@ const PTF = [
   { id: 55 },
 ];
 
-const List = ({ bookList }) => {
-  const [book, onSortList] = useState(bookList);
+const List = ({ bookAlist }) => {
+  const [book, onSortList] = useState(bookAlist);
   const rowPrice = [...book].sort((a, b) => a.price - b.price);
   const hiPrice = [...book].sort((a, b) => b.price - a.price);
   const newProduct = [...book].sort((a, b) => b.id - a.id);
@@ -75,7 +75,7 @@ const List = ({ bookList }) => {
       <div className="category">홈 : all</div>
       <h2>모든 제품</h2>
       <ul className="list">
-        <li>total book : {bookList.length}</li>
+        <li>total book : {bookAlist.length}</li>
         <li className="line">line</li>
         <li>
           <ul className="option">
