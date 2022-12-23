@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 const PTF = [
   { id: 1 },
@@ -60,12 +59,12 @@ const PTF = [
   { id: 55 },
 ];
 
-const List = ({ shopList }) => {
-  const [sortList, onSortList] = useState(shopList);
-  const rowPrice = [...sortList].sort((a, b) => a.price - b.price);
-  const hiPrice = [...sortList].sort((a, b) => b.price - a.price);
-  const newProduct = [...sortList].sort((a, b) => b.id - a.id);
-  const inkki = [...sortList].sort((a, b) => b.name.length - a.name.length);
+const List = ({ bookList }) => {
+  const [book, onSortList] = useState(bookList);
+  const rowPrice = [...book].sort((a, b) => a.price - b.price);
+  const hiPrice = [...book].sort((a, b) => b.price - a.price);
+  const newProduct = [...book].sort((a, b) => b.id - a.id);
+  const inkki = [...book].sort((a, b) => b.name.length - a.name.length);
 
   const newSort = (it) => {
     onSortList(it);
@@ -76,7 +75,7 @@ const List = ({ shopList }) => {
       <div className="category">홈 : all</div>
       <h2>모든 제품</h2>
       <ul className="list">
-        <li>total book : {shopList.length}</li>
+        <li>total book : {bookList.length}</li>
         <li className="line">line</li>
         <li>
           <ul className="option">
@@ -89,7 +88,7 @@ const List = ({ shopList }) => {
       </ul>
 
       <div className="inner">
-        {sortList.map((it, idx) => {
+        {book.map((it, idx) => {
           return (
             <>
               <Link to={"/shopItem/" + it.id}>
@@ -106,10 +105,10 @@ const List = ({ shopList }) => {
                     />
                   </div>
 
-                  <div className="name">{it.name}</div>
-                  <div className="des">{it.des.substring(0, 100)} ...</div>
+                  <div className="name">{it.ebk_nm}</div>
+                  <div className="des">{it.cn_intro.substring(0, 100)} ...</div>
                   <div className="price">
-                    <span>{it.price.toLocaleString()}</span> 원
+                    <span>{it.gnr.toLocaleString()}</span>
                   </div>
                 </figure>
               </Link>
