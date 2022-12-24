@@ -48,15 +48,80 @@ function Glist() {
       {load ? <Load>로딩중 입니다. 잠시만 기다려주세요.</Load> : null}
       {console.log(book)}
       <strong>총 {book.totalCount}개의 책을 팔고 있습니다.</strong>
-      <ListUl>
-        {Array.from({ length: book.totalCount / 100 }).map((it, idx) => {
-          return (
-            <li key={idx} onClick={() => setPageNo(idx + 1)}>
-              <button>{idx + 1}</button>
-            </li>
-          );
-        })}
-      </ListUl>
+      <ul className="lang_box">
+        <li>
+          <a href="#!">경제경영</a>
+        </li>
+        <li>
+          <a href="#!">자기계발</a>
+        </li>
+        <li>
+          <a href="#!">시.에세이</a>
+        </li>
+        <li>
+          <a href="#!">종교</a>
+        </li>
+        <li>
+          <a href="#!">소설</a>
+        </li>
+        <li>
+          <a href="#!">국어/외국어</a>
+        </li>
+        <li>
+          <a href="#!">정치/사회</a>
+        </li>
+        <li>
+          <a href="#!">역사/문화</a>
+        </li>
+        <li>
+          <a href="#!">과학/공학</a>
+        </li>
+        <li>
+          <a href="#!">IT/프로그래밍</a>
+        </li>
+        <li>
+          <a href="#!">건강/의학</a>
+        </li>
+        <li>
+          <a href="#!">가정/생활/요리</a>
+        </li>
+        <li>
+          <a href="#!">여행/취미</a>
+        </li>
+        <li>
+          <a href="#!">예술/대중문화</a>
+        </li>
+        <li>
+          <a href="#!">유아</a>
+        </li>
+        <li>
+          <a href="#!">아동</a>
+        </li>
+        <li>
+          <a href="#!">청소년</a>
+        </li>
+        <li>
+          <a href="#!">교재/수험서</a>
+        </li>
+        <li>
+          <a href="#!">매거진</a>
+        </li>
+        <li>
+          <a href="#!">로맨스</a>
+        </li>
+        <li>
+          <a href="#!">로맨스판타지</a>
+        </li>
+        <li>
+          <a href="#!">판타지</a>
+        </li>
+        <li>
+          <a href="#!">단행본만화</a>
+        </li>
+        <li>
+          <a href="#!">미분류</a>
+        </li>
+      </ul>
       <div>
         <figure>
           {book.items?.map((it, idx) => {
@@ -73,6 +138,16 @@ function Glist() {
               </div>
             );
           })}
+
+          <ListUl>
+            {Array.from({ length: book.totalCount / 100 }).map((it, idx) => {
+              return (
+                <li key={idx} onClick={() => setPageNo(idx + 1)}>
+                  <button>{idx + 1}</button>
+                </li>
+              );
+            })}
+          </ListUl>
         </figure>
       </div>
     </>

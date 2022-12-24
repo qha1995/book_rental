@@ -50,8 +50,8 @@ const Header = ({ cart, on, setOn }) => {
           <div className="top_box">
             <div className={"lang " + (TG[0] ? "on" : "")}>
               <strong onClick={() => setTG([!TG[0], false])}>
-                <Link to={`/glist`}>
-                  <i className="xi-book"></i> 도서목록{" "}
+                <Link to={`/`}>
+                  <i className="xi-book"></i> 장르 검색{" "}
                   <i className="xi-angle-down arrow"></i>
                 </Link>
               </strong>

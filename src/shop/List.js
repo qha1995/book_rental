@@ -81,8 +81,8 @@ const List = ({ bookList }) => {
           <ul className="option">
             <li onClick={() => newSort(rowNo)}>도서 명</li>
             <li onClick={() => newSort(rowName)}>저자 명</li>
-            <li onClick={() => newSort(rowPbl)}>출판사 명</li>
-            <li onClick={() => newSort(loanOk)}>대출 가능 도서</li>
+            <li onClick={() => newSort(rowPbl)}>장르 별</li>
+            <li onClick={() => newSort(loanOk)}>랭킹 별</li>
           </ul>
         </li>
       </ul>
