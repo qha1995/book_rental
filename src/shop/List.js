@@ -62,9 +62,6 @@ const PTF = [
 
 const List = ({ bookList }) => {
   const [book, onSortList] = useState([]);
-  // const rowNo = [...book].sort((a, b) => a.ebk_nm - b.ebk_nm);
-  // const rowName = [...book].sort((a, b) => a.aut_nm - b.aut_nm);
-  // const rowPbl = [...book].sort((a, b) => a.pblshr - b.pblshr);
   const loanOk = [...bookList].sort((a, b) => b.rsvt_noppl - a.rsvt_noppl);
 
   const newSort = (it) => {
@@ -84,9 +81,6 @@ const List = ({ bookList }) => {
         <li className="line">line</li>
         <li>
           <ul className="option">
-            {/* <li onClick={() => newSort(rowNo)}>도서 명</li>
-            <li onClick={() => newSort(rowName)}>저자 명</li>
-            <li onClick={() => newSort(rowPbl)}>장르 별</li> */}
             <li onClick={() => newSort(loanOk)}>
               랭킹 별 조회하기 <strong></strong>
             </li>

@@ -1,5 +1,4 @@
 import React from "react";
-import Prom from "./Prom";
 
 const Article = ({ content, num }) => {
   return (

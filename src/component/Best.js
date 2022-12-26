@@ -99,6 +99,7 @@ const Best = ({ bookList }) => {
       <p>이달의 베스트 도서를 만나보세요.</p>
       {}
       <div className="container">
+        {" "}
         <div className="left">
           <div className="slide">
             <Slider
@@ -107,43 +108,35 @@ const Best = ({ bookList }) => {
               arrows={false}
               asNavFor={RSS}
               speed={500}
-              autoplaySpeed={3000}
               afterChange={(index) => seTSidx(index)}
-              responsive={[
-                {
-                  breakpoint: 768,
-                  settings: {
-                    slidesToShow: 1,
-                    autoplay: true,
-                    infinite: true,
-                  },
-                },
-              ]}
             >
-              {PTF.map((building, idx) => {
+              {PTF.map((books, idx) => {
                 return (
-                  <figure key={building.id}>
+                  <figure key={books.id}>
                     <div className="box">
-                      <img
-                        src={
-                          process.env.PUBLIC_URL +
-                          "/assets/images/main_best0" +
-                          building.id +
-                          ".jpg"
-                        }
-                        alt=""
-                      />
+                      <Link to={"/Item/" + book[sIdx]?.no}>
+                        <img
+                          src={
+                            process.env.PUBLIC_URL +
+                            "/assets/images/main_best0" +
+                            books.id +
+                            ".jpg"
+                          }
+                          alt=""
+                        />
+                      </Link>
                     </div>
                   </figure>
                 );
               })}
             </Slider>
+
             <div className="textbox">
               <h3>도서 명 : {book[sIdx]?.ebk_nm}</h3>
               <p>줄거리 : {book[sIdx]?.cn_intro.substring(0, 300)} ...</p>
             </div>
           </div>
-        </div>
+        </div>{" "}
         <div className="right">
           <div className="arrows">
             <i
@@ -165,32 +158,22 @@ const Best = ({ bookList }) => {
               arrows={false}
               autoplay={true}
               speed={500}
-              responsive={[
-                {
-                  breakpoint: 768,
-                  settings: {
-                    slidesToShow: 1,
-
-                    infinite: true,
-                  },
-                },
-              ]}
             >
-              {NPTF.map((building) => {
+              {NPTF.map((books) => {
                 return (
-                  <figure key={building.id}>
+                  <figure key={books.id}>
                     <div className="box">
                       <img
                         src={
                           process.env.PUBLIC_URL +
                           "/assets/images/main_best0" +
-                          building.id +
+                          books.id +
                           ".jpg"
                         }
                         alt=""
                       />
                     </div>
-                    <div className="des">{building.title}</div>
+                    <div className="des">{books.title}</div>
                   </figure>
                 );
               })}

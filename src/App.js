@@ -5,13 +5,12 @@ import Totop from "./component/Totop";
 import Wrapper from "./component/Wrapper";
 import Sub01 from "./pages/Sub01";
 import Sub02 from "./pages/Sub02";
-import { Route, Routes, useSearchParams } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Main from "./component/Main";
 import { useEffect, useState } from "react";
 import Cart from "./shop/Cart";
 import Itm from "./shop/Itm";
 import List from "./shop/List";
-import Glist from "./shop/Glist";
 import Category from "./shop/Category";
 import "./css/ShopDetail.scss";
 
@@ -53,9 +52,9 @@ const App = () => {
   const [itm, setItm] = useState();
   const [cart, setCart] = useState([]);
 
-  // 책정보만 가져오기
+  // 책정보만
   const [book, getBook] = useState([]);
-  // list 전부 가져오기
+  // list 전부
   const [alist, getAlist] = useState([]);
 
   const [pageNo, setPageNo] = useState(1);
@@ -67,25 +66,6 @@ const App = () => {
     getAlist(r.data);
     getBook(r.data.items);
   };
-
-  // const shopdata = book.map((it) => {
-  //   return {
-  //     no: it.no,
-  //     ebk_nm: it.ebk_nm,
-  //     pblshr: it.pblshr,
-  //     gnr: it.gnr,
-  //     cn_intro: it.cn_intro,
-  //     srvc_form: it.srvc_form,
-  //     numOfRows: it.numOfRows,
-  //     pageNo: it.pageNo,
-  //     resultCode: it.resultCode,
-  //     resulitMsg: it.resulitMsg,
-  //     totalCount: it.totalCount,
-  //aut_nm:it.aut_nm,
-  //loan_avlbl_yn:it.loan_avlbl_yn
-  //   };
-  // });
-  // setItm(shopdata);
 
   useEffect(() => {
     getApi();
@@ -99,9 +79,6 @@ const App = () => {
         shopList={itm}
         bookList={book}
         bookAlist={alist}
-
-        // os={os}
-        // setOs={setOs}
       />
       <Routes>
         <Route path="/" element={<Main content={INFORMATION} />} />
@@ -119,18 +96,7 @@ const App = () => {
             />
           }
         />
-        <Route
-          path="/glist"
-          element={
-            <Glist
-              shopList={itm}
-              cart={cart}
-              setCart={setCart}
-              bookAlist={alist}
-              bookList={book}
-            />
-          }
-        />
+
         <Route
           path="/cart"
           element={
@@ -162,7 +128,7 @@ const App = () => {
       </Routes>
       {console.log(alist)}
 
-      {/* 책 정보 뿌리기... */}
+      {/* test 책 정보 뿌리기... */}
       {/* <>
         total : {alist.totalCount}
         {book.map((it) => {

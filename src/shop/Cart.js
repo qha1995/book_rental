@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const PTF = [
@@ -68,7 +68,6 @@ const Cart = ({ cart, setCart }) => {
     );
   }, []);
 
-  // cart = cart.filter((itm, idx, arry) => idx === arry.findIndex(it => it.id === itm.id));
   return (
     <section className="searchList pn">
       <div className="category">홈 : CART</div>
@@ -99,17 +98,12 @@ const Cart = ({ cart, setCart }) => {
                       }
                       alt=""
                     />
-
-                    {/* <img src={ca.src} alt="" /> */}
                   </Link>
                 </td>
                 <td className="name" style={{ width: "300px" }}>
                   {ca.title}
                 </td>
                 <td className="des">{ca.des.substring(0, 200)} ...</td>
-                {/* <td className="price" style={{ width: "150px" }}>
-                  <span>{ca.price.toLocaleString()}</span> 원
-                </td> */}
               </tr>
             );
           })}

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
@@ -60,11 +60,10 @@ const PTF = [
   { id: 55 },
 ];
 
-const Itm = ({ shopList, cart, setCart, bookList }) => {
+const Itm = ({ cart, setCart, bookList }) => {
   const { itm } = useParams();
   const navigate = useNavigate();
 
-  // const matchItm = bookList.find((it) => itm === String(it.no));
   const [matchItm, setMatchItm] = useState({});
   useEffect(() => {
     setMatchItm(bookList.find((it) => itm === String(it.no)));
@@ -84,7 +83,6 @@ const Itm = ({ shopList, cart, setCart, bookList }) => {
             }
             alt=""
           />
-          {/* <img src={matchItm.src} alt="" /> */}
         </div>
         <div className="right">
           <div className="name">제목: {matchItm.ebk_nm}</div>

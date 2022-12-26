@@ -69,25 +69,3 @@ body {
     text-align: center;
   }
 }
-
-@media (max-width: 768px) {
-  .Wrapper {
-    overflow-x: hidden;
-  }
-
-  $mainColor: #222;
-  $wColor: #f9f9f9;
-  $gColor: #555;
-  $bColor: #111;
-  $boColor: rgba(0, 0, 0, 0.75);
-  $subColor: #fff;
-
-  .inner {
-    width: auto;
-    margin: 0 auto;
-  }
-
-  body {
-    background-color: #333;
-  }
-}
