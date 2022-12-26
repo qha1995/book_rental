@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/book_rental/static/css/main.568ea32f.css",
-    "main.js": "/book_rental/static/js/main.746eb4f9.js",
+    "main.css": "/book_rental/static/css/main.b362973a.css",
+    "main.js": "/book_rental/static/js/main.88c464c7.js",
     "static/media/subpage_01.jpg": "/book_rental/static/media/subpage_01.e167b2280d6ef6388ae2.jpg",
     "static/media/logo_h.png": "/book_rental/static/media/logo_h.6c6e950430d371291b99.png",
     "index.html": "/book_rental/index.html",
-    "main.568ea32f.css.map": "/book_rental/static/css/main.568ea32f.css.map",
-    "main.746eb4f9.js.map": "/book_rental/static/js/main.746eb4f9.js.map"
+    "main.b362973a.css.map": "/book_rental/static/css/main.b362973a.css.map",
+    "main.88c464c7.js.map": "/book_rental/static/js/main.88c464c7.js.map"
   },
   "entrypoints": [
-    "static/css/main.568ea32f.css",
-    "static/js/main.746eb4f9.js"
+    "static/css/main.b362973a.css",
+    "static/js/main.88c464c7.js"
   ]
 }
