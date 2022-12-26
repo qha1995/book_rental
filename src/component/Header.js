@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 import "../css/Header.scss";
 
 const NAVLINK = [
-  { id: 1, menu: "회사 소개", link: "/sub01" },
+  { id: 1, menu: "사업 소개", link: "/sub01" },
   { id: 2, menu: "이용 방법", link: "/sub02" },
   { id: 3, menu: "도서 리스트", link: "/list" },
   { id: 4, menu: "도서 보관함", link: "/cart" },
 ];
 
-const Header = ({ cart, on, setOn }) => {
+const Header = ({ cart, on, setOn, bookList }) => {
   const [TG, setTG] = useState([false, false]);
   const HL = useRef();
+
+  const gnrList = new Set(bookList.map((it) => it.gnr));
+  console.log(gnrList);
 
   const scrollEvent = () => {
     let sct = window.scrollY;
@@ -33,7 +36,7 @@ const Header = ({ cart, on, setOn }) => {
     <header className={`Header ${on ? "os" : ""}`} ref={HL}>
       <div className="hd_wrap">
         <h1>
-          <a href="https://qha1995.github.io/book_rental/">신시북</a>
+          <Link to={`/`}>신시북</Link>
         </h1>
         <nav className="Gnb">
           <ul>
@@ -50,84 +53,17 @@ const Header = ({ cart, on, setOn }) => {
           <div className="top_box">
             <div className={"lang " + (TG[0] ? "on" : "")}>
               <strong onClick={() => setTG([!TG[0], false])}>
-                <Link to={`/`}>
-                  <i className="xi-book"></i> 장르 검색{" "}
-                  <i className="xi-angle-down arrow"></i>
-                </Link>
+                <i className="xi-book"></i> 장르 검색{" "}
+                <i className="xi-angle-down arrow"></i>
               </strong>
               <ul className="lang_box">
-                <li>
-                  <a href="#!">경제경영</a>
-                </li>
-                <li>
-                  <a href="#!">자기계발</a>
-                </li>
-                <li>
-                  <a href="#!">시.에세이</a>
-                </li>
-                <li>
-                  <a href="#!">종교</a>
-                </li>
-                <li>
-                  <a href="#!">소설</a>
-                </li>
-                <li>
-                  <a href="#!">국어/외국어</a>
-                </li>
-                <li>
-                  <a href="#!">정치/사회</a>
-                </li>
-                <li>
-                  <a href="#!">역사/문화</a>
-                </li>
-                <li>
-                  <a href="#!">과학/공학</a>
-                </li>
-                <li>
-                  <a href="#!">IT/프로그래밍</a>
-                </li>
-                <li>
-                  <a href="#!">건강/의학</a>
-                </li>
-                <li>
-                  <a href="#!">가정/생활/요리</a>
-                </li>
-                <li>
-                  <a href="#!">여행/취미</a>
-                </li>
-                <li>
-                  <a href="#!">예술/대중문화</a>
-                </li>
-                <li>
-                  <a href="#!">유아</a>
-                </li>
-                <li>
-                  <a href="#!">아동</a>
-                </li>
-                <li>
-                  <a href="#!">청소년</a>
-                </li>
-                <li>
-                  <a href="#!">교재/수험서</a>
-                </li>
-                <li>
-                  <a href="#!">매거진</a>
-                </li>
-                <li>
-                  <a href="#!">로맨스</a>
-                </li>
-                <li>
-                  <a href="#!">로맨스판타지</a>
-                </li>
-                <li>
-                  <a href="#!">판타지</a>
-                </li>
-                <li>
-                  <a href="#!">단행본만화</a>
-                </li>
-                <li>
-                  <a href="#!">미분류</a>
-                </li>
+                {[...gnrList].map((it, idx) => {
+                  return (
+                    <li>
+                      <Link to={`/Blist/${it.replaceAll("/", "")}`}>{it}</Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className={"top_search " + (TG[1] ? "on" : "")}>

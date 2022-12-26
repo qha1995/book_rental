@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NAVLINK = [
-  { content: "회사 소개", link: "/sub01" },
+  { content: "사업 소개", link: "/sub01" },
   { content: "이용 방법", link: "/sub02" },
   { content: "도서 리스트", link: "/list" },
   { content: "도서 보관함", link: "/cart" },

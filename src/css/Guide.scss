@@ -3,10 +3,10 @@
 .Guide {
   .inner {
     display: flex;
-
     figure {
       flex: 1;
       text-align: center;
+      width: 400px;
 
       &:hover img {
         transform: scale(1.2);
@@ -24,18 +24,18 @@
 
     .tit {
       position: relative;
-      font-size: 20px;
+      font-size: 23px;
       font-weight: 500;
-      margin: 0 0 20px 0;
+      margin: 0 0 10px 0;
     }
 
     .dec {
-      font-size: 15px;
+      font-size: 17px;
       margin: 0 0 30px 0;
       line-height: 1.45;
       /* white-space: pre-line; */
       display: inline-block;
-      width: 70%;
+      width: 100%;
       min-height: 50px;
       word-break: keep-all;
     }

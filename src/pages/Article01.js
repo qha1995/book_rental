@@ -14,6 +14,11 @@ const Article = ({ content, num }) => {
         </div>
       </div>
 
+      <div className="sub__tit">사업 소개</div>
+      <div className="sub__des">
+        SINSIBOOK 은 도서를 간편하게 대여할 수 있는 신개념 도서 대여
+        시스템입니다.
+      </div>
       <div className="sub__tit">기업 정신</div>
 
       <ul className="sub__ul">
@@ -39,7 +44,7 @@ const Article = ({ content, num }) => {
         </figure>
       </div>
 
-      <div className="sub__tit">신시웨이 연혁 </div>
+      <div className="sub__tit">신시북 연혁 </div>
 
       <ul className="sub__service">
         <li>

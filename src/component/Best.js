@@ -65,10 +65,11 @@ const PTF = [
 
 const Best = ({ bookList }) => {
   const [book, getBook] = useState([]);
+  const [sIdx, seTSidx] = useState(0);
 
   const getApi = async () => {
     const r = await axios.get(
-      `https://apis.data.go.kr/4050000/libebook/getLibebook?serviceKey=nmPIjJ%2Bj0FufPiP6k4BLPlq3n%2B46QZN%2B6hgSINrrxqk3nNwnoHX2ynqX6Dlgr3xFeivGPus2vgmh6Ifx1vdu1g%3D%3D&pageNo=1&numOfRows=3`
+      `https://apis.data.go.kr/4050000/libebook/getLibebook?serviceKey=nmPIjJ%2Bj0FufPiP6k4BLPlq3n%2B46QZN%2B6hgSINrrxqk3nNwnoHX2ynqX6Dlgr3xFeivGPus2vgmh6Ifx1vdu1g%3D%3D&pageNo=1&numOfRows=55`
     );
     getBook(r.data.items);
   };
@@ -90,14 +91,13 @@ const Best = ({ bookList }) => {
     setRSS(RS.current);
   }, []);
 
-  useEffect(() => {
-    console.log(bookList, " ——-------------------");
-  }, [bookList]);
+  console.log(book);
 
   return (
     <section className="Best csc">
       <h2>베스트 도서</h2>
       <p>이달의 베스트 도서를 만나보세요.</p>
+      {}
       <div className="container">
         <div className="left">
           <div className="slide">
@@ -108,6 +108,7 @@ const Best = ({ bookList }) => {
               asNavFor={RSS}
               speed={500}
               autoplaySpeed={3000}
+              afterChange={(index) => seTSidx(index)}
               responsive={[
                 {
                   breakpoint: 768,
@@ -119,7 +120,7 @@ const Best = ({ bookList }) => {
                 },
               ]}
             >
-              {PTF.map((building) => {
+              {PTF.map((building, idx) => {
                 return (
                   <figure key={building.id}>
                     <div className="box">
@@ -137,70 +138,65 @@ const Best = ({ bookList }) => {
                 );
               })}
             </Slider>
+            <div className="textbox">
+              <h3>도서 명 : {book[sIdx]?.ebk_nm}</h3>
+              <p>줄거리 : {book[sIdx]?.cn_intro.substring(0, 300)} ...</p>
+            </div>
           </div>
         </div>
+        <div className="right">
+          <div className="arrows">
+            <i
+              className="xi-angle-left-thin"
+              onClick={() => LS.current.slickPrev()}
+            ></i>
+            <i
+              className="xi-angle-right-thin"
+              onClick={() => LS.current.slickNext()}
+            ></i>
+          </div>
 
-        {book.map((it) => {
-          return (
-            <div className="right">
-              <div className="arrows">
-                <i
-                  className="xi-angle-left-thin"
-                  onClick={() => LS.current.slickPrev()}
-                ></i>
-                <i
-                  className="xi-angle-right-thin"
-                  onClick={() => LS.current.slickNext()}
-                ></i>
-              </div>
+          <div className="slide">
+            <Slider
+              slidesToShow={5}
+              className="right_slide"
+              ref={RS}
+              asNavFor={LSS}
+              arrows={false}
+              autoplay={true}
+              speed={500}
+              responsive={[
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 1,
 
-              <div className="slide">
-                <Slider
-                  slidesToShow={5}
-                  className="right_slide"
-                  ref={RS}
-                  asNavFor={LSS}
-                  arrows={false}
-                  autoplay={true}
-                  speed={500}
-                  responsive={[
-                    {
-                      breakpoint: 768,
-                      settings: {
-                        slidesToShow: 1,
-
-                        infinite: true,
-                      },
-                    },
-                  ]}
-                >
-                  {NPTF.map((building) => {
-                    return (
-                      <figure key={building.id}>
-                        <div className="textbox">
-                          <h2>도서 명 : {it.ebk_nm}</h2>
-                          <p>줄거리 : {it.cn_intro.substring(0, 100)} ...</p>
-                        </div>
-                        <div className="box">
-                          <img
-                            src={
-                              process.env.PUBLIC_URL +
-                              "/assets/images/main_best0" +
-                              building.id +
-                              ".jpg"
-                            }
-                            alt=""
-                          />
-                        </div>
-                        <div className="des">{building.title}</div>
-                      </figure>
-                    );
-                  })}
-                </Slider>
-              </div>
-            </div>
-          );
-        })}
+                    infinite: true,
+                  },
+                },
+              ]}
+            >
+              {NPTF.map((building) => {
+                return (
+                  <figure key={building.id}>
+                    <div className="box">
+                      <img
+                        src={
+                          process.env.PUBLIC_URL +
+                          "/assets/images/main_best0" +
+                          building.id +
+                          ".jpg"
+                        }
+                        alt=""
+                      />
+                    </div>
+                    <div className="des">{building.title}</div>
+                  </figure>
+                );
+              })}
+            </Slider>
+          </div>
+        </div>
       </div>
     </section>
   );

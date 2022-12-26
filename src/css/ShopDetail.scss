@@ -51,6 +51,10 @@
         padding: 0 0.5px;
         color: var(--gc);
       }
+      strong {
+        font-family: xeicon;
+        font-size: 15px;
+      }
     }
   }
 
@@ -113,16 +117,17 @@
   }
 
   .name {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0 0 10px 0;
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
     min-height: 30px;
   }
 
   .des {
-    font-size: 14px;
-    margin: 0 0 10px 0;
+    font-size: 17px;
+    margin: 0 0 40px 0;
     min-height: 100px;
+    line-height: 1.45;
   }
 
   .price {
@@ -173,7 +178,7 @@
     border-radius: 3px;
     color: #fff;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
     margin: 0 15px 0 0;
   }
@@ -189,15 +194,16 @@
     font-weight: 500;
   }
   .btp {
-    font-size: 15px;
+    font-size: 17px;
     cursor: pointer;
-    background: var(--mc);
-    border: 10px solid transparent;
+    background: var(--cc);
+    padding: 10px 10px;
+    border: 1px solid transparent;
     border-radius: 3px;
     color: #fff;
     cursor: pointer;
     font-weight: 500;
-    margin: 0 0 0 180px;
+    margin: 0 0 0 160px;
   }
 }
 
@@ -262,6 +268,7 @@
   }
 
   .inner {
+    margin: auto auto 30px auto;
     td {
       padding: 20px 15px;
     }
@@ -301,7 +308,19 @@
       }
     }
   }
+  .bts {
+    background: var(--mc);
+    border: 10px solid transparent;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 auto;
+    display: block;
+    width: 150px;
+  }
 }
 
-@media (max-width: 768px) {
-}
+// @media (max-width: 768px) {
+// }

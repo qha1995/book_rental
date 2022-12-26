@@ -2,35 +2,40 @@ import { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "../css/MainSlider.scss";
+import { Link } from "react-router-dom";
 
 const MS = [
   {
     id: 1,
-    content: "사업 소개",
+    content: "Book Rental System",
     description:
       "SINSIBOOK 은 도서를 간편하게 대여할 수 있는 신개념 도서 대여 시스템입니다.",
-    link: "/",
+    link: "/sub01",
+    click: "사업 소개",
   },
   {
     id: 2,
     content: "스마트 독서",
     description:
       "전자도서관과 함께하는 스마트한 독서 생활. 멀리 있는 서점 찾아 헤매지 말고, 가까운 곳에서 독서를 즐기세요.",
-    link: "/",
+    link: "/list",
+    click: "도서 리스트",
   },
   {
     id: 3,
-    content: "이달의 베스트 도서",
+    content: "이 달의 추천 도서",
     description:
-      " “모든 거짓이 사라지면 당신만 여기 남습니다. ” <뉴욕타임스> 10년 결산 베스트셀러, 아마존 25년 이상 장기 베스트셀러, 베르나르 베르베르, 오프라 윈프리에게 영감을 준 책  ",
-    link: "/",
+      " “ 사랑하는 이들에게 선물하고 싶은 책 ” 당신에게 나보다 소중한 사람이 있다면 이 책으로 마음을 표현해보자. ",
+    link: "/item/39",
+    click: "장바구니 담기",
   },
   {
     id: 4,
-    content: "이달의 신간 도서",
+    content: "이 달의 신간 도서",
     description:
       " “ 내 감정과 친해질 궁리를 시작했다. ” 오늘이 불안하고 내일이 두려운 당신을 행복한 삶으로 인도할 독보적인 심리서 ! ",
-    link: "/",
+    link: "/item/12",
+    click: "장바구니 담기",
   },
 ];
 const MainSlider = () => {
@@ -68,9 +73,11 @@ const MainSlider = () => {
           <div className="content">
             <div className="tit">{MS[slideNum].content}</div>
             <p>{MS[slideNum].description}</p>
-            <a href={MS[slideNum].link} className="cbtn">
-              자세히보기
-            </a>
+            <Link to={MS[slideNum].link}>
+              <a href={MS[slideNum].link} className="cbtn">
+                {MS[slideNum].click}
+              </a>
+            </Link>
           </div>
           <div className="num">
             0{slideNum + 1} <span>/ 0{MS.length}</span>

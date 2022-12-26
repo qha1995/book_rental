@@ -12,16 +12,16 @@ import Cart from "./shop/Cart";
 import Itm from "./shop/Itm";
 import List from "./shop/List";
 import Glist from "./shop/Glist";
-// import Category from "./shop/Category";
+import Category from "./shop/Category";
 import "./css/ShopDetail.scss";
 
 const App = () => {
   const INFORMATION = [
     {
       id: 0,
-      tit: "회사 소개",
-      con: "신시웨이 브랜드 소개",
-      des: "신시웨이 브랜드를 소개합니다.",
+      tit: "사업 소개",
+      con: "신시북 브랜드 소개",
+      des: "신시북 브랜드를 소개합니다.",
       link: "/sub01",
     },
 
@@ -62,7 +62,7 @@ const App = () => {
 
   const getApi = async () => {
     const r = await axios.get(
-      `https://apis.data.go.kr/4050000/libebook/getLibebook?serviceKey=nmPIjJ%2Bj0FufPiP6k4BLPlq3n%2B46QZN%2B6hgSINrrxqk3nNwnoHX2ynqX6Dlgr3xFeivGPus2vgmh6Ifx1vdu1g%3D%3D&pageNo=${pageNo}&numOfRows=100`
+      `https://apis.data.go.kr/4050000/libebook/getLibebook?serviceKey=nmPIjJ%2Bj0FufPiP6k4BLPlq3n%2B46QZN%2B6hgSINrrxqk3nNwnoHX2ynqX6Dlgr3xFeivGPus2vgmh6Ifx1vdu1g%3D%3D&pageNo=${pageNo}&numOfRows=55`
     );
     getAlist(r.data);
     getBook(r.data.items);
@@ -144,12 +144,11 @@ const App = () => {
         />
 
         <Route
-          path="/shopList"
-          element={<List shopList={itm} bookList={book} bookAlist={alist} />}
+          path="/BList/:cate"
+          element={<Category bookList={book} bookAlist={alist} />}
         />
-        {/* <Route path="/shopList/:cate" element={<Category shopList={itm} />} /> */}
         <Route
-          path="/shopItem/:itm"
+          path="/Item/:itm"
           element={
             <Itm
               shopList={itm}
@@ -161,18 +160,19 @@ const App = () => {
           }
         />
       </Routes>
+      {console.log(alist)}
 
       {/* 책 정보 뿌리기... */}
-      <>
+      {/* <>
         total : {alist.totalCount}
         {book.map((it) => {
           return (
             <li>
-              {it.no} {it.ebk_nm}
+              {it.no} {it.gnr}
             </li>
           );
         })}
-      </>
+      </> */}
 
       <Footer />
       <Totop />
