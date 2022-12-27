@@ -2,12 +2,6 @@ import "../css/Guide.scss";
 import { Link } from "react-router-dom";
 
 const CONTENT = [
-  // {
-  //   id: 1,
-  //   title: "회사 소개",
-  //   dec: "신시웨이 브랜드 소개",
-  //   link: "/sub01",
-  // },
   {
     id: 1,
     title: "이용 방법",

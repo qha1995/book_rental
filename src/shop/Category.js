@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+
 const PTF = [
   { id: 1 },
   { id: 2 },
@@ -57,7 +58,7 @@ const PTF = [
   { id: 55 },
 ];
 
-const List = ({ bookList }) => {
+const Blist = ({ bookList }) => {
   const { cate } = useParams();
 
   const cateList = bookList.filter((it) => cate === it.gnr.replaceAll("/", ""));
@@ -101,4 +102,4 @@ const List = ({ bookList }) => {
   );
 };
 
-export default List;
+export default Blist;
