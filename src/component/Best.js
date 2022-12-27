@@ -63,7 +63,7 @@ const PTF = [
   { id: 55 },
 ];
 
-const Best = ({ bookList }) => {
+const Best = () => {
   const [book, getBook] = useState([]);
   const [sIdx, seTSidx] = useState(0);
 
