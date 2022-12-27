@@ -9,31 +9,24 @@ const NAVLINK = [
   { id: 4, menu: "도서 보관함", link: "/cart" },
 ];
 
-const Header = ({ cart, on, setOn, bookList }) => {
+const Header = ({ setOn, bookList }) => {
   const [TG, setTG] = useState([false, false]);
-  const HL = useRef();
+  const SE = useRef();
 
   const gnrList = new Set(bookList.map((it) => it.gnr));
   console.log(gnrList);
 
-  const scrollEvent = () => {
-    let sct = window.scrollY;
-    sct > 0
-      ? HL.current.classList.add("on")
-      : HL.current.classList.remove("on");
-  };
-
-  const wheelEvent2 = (e) => {
-    e.preventDefault();
-    console.log(0);
-  };
   useEffect(() => {
-    window.addEventListener("scroll", scrollEvent);
-    HL.current.addEventListener("wheel", wheelEvent2);
+    window.addEventListener("scroll", () => {
+      let sct = window.scrollY;
+      sct > 0
+        ? SE.current.classList.add("on")
+        : SE.current.classList.remove("on");
+    });
   }, []);
 
   return (
-    <header className={`Header ${on ? "os" : ""}`} ref={HL}>
+    <header className="Header" ref={SE}>
       <div className="hd_wrap">
         <h1>
           <Link to={`/`}>신시북</Link>
@@ -42,7 +35,7 @@ const Header = ({ cart, on, setOn, bookList }) => {
           <ul>
             {NAVLINK.map((it, idx) => {
               return (
-                <li key={it.id} onClick={() => setOn(false)}>
+                <li key={it.id}>
                   <Link to={it.link}>{it.menu}</Link>
                 </li>
               );
